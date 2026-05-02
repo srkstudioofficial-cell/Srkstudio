@@ -1,0 +1,1980 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>S.R.K Studio — Bihar's #1 Cinematic Wedding Photography</title>
+  <meta name="description" content="Bihar's #1 Wedding Photography & Videography Studio. CEO: Sharvan Yadav. 500+ Weddings. Call: 9110066743" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Inter:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet" />
+  <style>
+    /* ========== CSS RESET & VARIABLES ========== */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --burgundy: #7B1C3A;
+      --burgundy-dark: #4a0a20;
+      --burgundy-light: #9B2C4A;
+      --yellow: #FACC15;
+      --yellow-dark: #d97706;
+      --red-light: #ff4d6d;
+      --dark: #1a0010;
+      --white: #ffffff;
+      --rose-100: #ffe4e6;
+      --rose-200: #fecdd3;
+      --rose-300: #fda4af;
+      --font-display: 'Playfair Display', Georgia, serif;
+      --font-elegant: 'Cormorant Garamond', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-body); color: #1f2937; background: #fff; overflow-x: hidden; }
+    img { max-width: 100%; display: block; }
+    a { text-decoration: none; color: inherit; }
+    button { cursor: pointer; border: none; background: none; font-family: inherit; }
+    input, select, textarea { font-family: inherit; }
+
+    /* ========== UTILITY ========== */
+    .container { width: 100%; max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+    .text-burgundy { color: var(--burgundy); }
+    .text-yellow { color: var(--yellow); }
+    .text-white { color: #fff; }
+    .font-display { font-family: var(--font-display); }
+    .font-elegant { font-family: var(--font-elegant); }
+    .uppercase { text-transform: uppercase; }
+    .tracking-wide { letter-spacing: 0.2em; }
+    .hidden { display: none !important; }
+
+    /* Gradient texts */
+    .text-grad-gold {
+      background: linear-gradient(135deg, #FACC15, #d97706, #FACC15);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .text-grad-burgundy {
+      background: linear-gradient(135deg, #7B1C3A, #c4385d, #7B1C3A);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+
+    /* Gold divider */
+    .gold-divider {
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #FACC15, #d97706, #FACC15, transparent);
+      border-radius: 9999px;
+    }
+
+    /* Buttons */
+    .btn-luxe {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 1rem 2.5rem; border-radius: 0.75rem;
+      background: linear-gradient(135deg, #7B1C3A, #9B2C4A);
+      color: #FACC15; font-family: var(--font-display); font-weight: 700;
+      font-size: 1rem; letter-spacing: 0.1em; transition: all 0.3s;
+      box-shadow: 0 4px 24px rgba(123,28,58,0.4);
+    }
+    .btn-luxe:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(123,28,58,0.5); }
+    .btn-gold {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 1rem 2.5rem; border-radius: 0.75rem;
+      background: linear-gradient(135deg, #FACC15, #d97706);
+      color: #7B1C3A; font-family: var(--font-display); font-weight: 700;
+      font-size: 1rem; letter-spacing: 0.1em; transition: all 0.3s;
+    }
+    .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(250,204,21,0.4); }
+
+    /* Section heading pattern */
+    .section-label {
+      display: flex; align-items: center; justify-content: center; gap: 0.5rem;
+      font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.3em;
+      margin-bottom: 1rem;
+    }
+    .section-title {
+      font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 900; margin-bottom: 1rem; text-align: center;
+    }
+    .section-sub {
+      font-family: var(--font-elegant); font-size: 1.125rem; font-style: italic;
+      text-align: center; max-width: 40rem; margin: 0 auto;
+    }
+    .section-head { text-align: center; margin-bottom: 4rem; }
+
+    /* Stars */
+    .stars { color: #FACC15; letter-spacing: 2px; font-size: 1rem; }
+
+    /* ========== TOP BAR ========== */
+    .top-bar {
+      background: linear-gradient(90deg, #7B1C3A, #9B2C4A, #7B1C3A);
+      color: #FACC15; font-size: 0.75rem; padding: 0.5rem 1rem; text-align: center;
+    }
+    .top-bar-inner { display: flex; align-items: center; justify-content: center; gap: 1.5rem; flex-wrap: wrap; }
+    .top-bar-item { display: flex; align-items: center; gap: 0.35rem; font-weight: 700; }
+
+    /* ========== HEADER ========== */
+    #main-header {
+      position: sticky; top: 0; z-index: 100; background: #fff;
+      border-bottom: 1px solid var(--rose-100);
+      transition: all 0.3s; box-shadow: 0 2px 20px rgba(0,0,0,0.08);
+    }
+    .header-inner {
+      display: flex; align-items: center; justify-content: space-between;
+      height: 5rem; padding: 0 1.5rem; max-width: 1400px; margin: 0 auto;
+    }
+    .logo-wrap { display: flex; align-items: center; gap: 0.75rem; }
+    .logo-img {
+      width: 3.5rem; height: 3.5rem; border-radius: 50%; object-fit: cover;
+      border: 2px solid rgba(250,204,21,0.6); box-shadow: 0 4px 16px rgba(0,0,0,0.2);
+    }
+    .logo-text-main {
+      font-family: var(--font-display); font-size: 1.5rem; font-weight: 900;
+      background: linear-gradient(135deg, #7B1C3A, #c4385d);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      text-transform: uppercase; letter-spacing: 0.1em;
+    }
+    .logo-text-sub {
+      font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.25em;
+      color: #6b7280; margin-top: 0.2rem;
+    }
+    nav { display: flex; align-items: center; gap: 0.25rem; }
+    .nav-link {
+      display: flex; align-items: center; gap: 0.35rem;
+      padding: 0.5rem 1rem; font-size: 0.8rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.15em; border-radius: 0.5rem;
+      color: #374151; transition: all 0.2s;
+    }
+    .nav-link:hover { color: var(--burgundy); background: #fff5f5; }
+    .nav-link.active { color: var(--burgundy); background: #fffbeb; }
+    .nav-link.highlight {
+      background: linear-gradient(135deg, #7B1C3A, #9B2C4A);
+      color: #fff; margin-left: 0.5rem;
+    }
+    .nav-link.highlight:hover { opacity: 0.9; }
+    .btn-call {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.5rem 1rem; border-radius: 9999px;
+      background: #FACC15; color: #7B1C3A; font-weight: 700;
+      font-size: 0.85rem; transition: all 0.2s;
+    }
+    .btn-call:hover { background: #fde047; }
+    .hamburger { display: none; flex-direction: column; gap: 5px; padding: 0.5rem; cursor: pointer; }
+    .hamburger span { width: 24px; height: 2px; background: var(--burgundy); border-radius: 2px; transition: all 0.3s; }
+    .mobile-nav {
+      display: none; flex-direction: column; gap: 0.25rem;
+      padding: 0.75rem 1rem; border-top: 1px solid var(--rose-100);
+    }
+    .mobile-nav.open { display: flex; }
+    .mobile-nav-link {
+      display: flex; align-items: center; gap: 0.5rem;
+      padding: 0.75rem 1rem; font-size: 0.9rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.1em; border-radius: 0.5rem; color: #374151;
+    }
+    .mobile-nav-link.highlight { background: linear-gradient(135deg, #7B1C3A, #9B2C4A); color: #fff; }
+    @media (max-width: 1024px) { nav { display: none; } .hamburger { display: flex; } }
+    @media (max-width: 640px) { .btn-call { display: none; } }
+
+    /* ========== PAGES ========== */
+    .page { display: none; }
+    .page.active { display: block; }
+
+    /* ========== HERO ========== */
+    .hero {
+      position: relative; min-height: 100vh; display: flex; align-items: center;
+      justify-content: center; overflow: hidden; background: var(--dark);
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+    }
+    .hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.92; }
+    .hero-overlay-b {
+      position: absolute; inset: 0;
+      background: linear-gradient(to bottom, rgba(0,0,0,0.3), transparent, rgba(0,0,0,0.5));
+    }
+    .hero-overlay-r {
+      position: absolute; inset: 0;
+      background: linear-gradient(to right, rgba(0,0,0,0.2), transparent, rgba(0,0,0,0.2));
+    }
+    .hero-content {
+      position: relative; z-index: 10; text-align: center;
+      padding: 5rem 1rem; max-width: 64rem; margin: 0 auto; width: 100%;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: linear-gradient(135deg, #FACC15, #d97706);
+      color: #7B1C3A; font-weight: 700; font-size: 0.7rem;
+      text-transform: uppercase; letter-spacing: 0.3em;
+      padding: 0.5rem 1.25rem; border-radius: 9999px; margin-bottom: 2rem;
+      box-shadow: 0 4px 24px rgba(250,204,21,0.4);
+    }
+    .hero-h1 {
+      font-family: var(--font-display);
+      font-size: clamp(3.5rem, 10vw, 7rem);
+      font-weight: 900; color: #fff; line-height: 0.9;
+      letter-spacing: -0.02em; margin-bottom: 1.5rem;
+      text-shadow: 0 4px 30px rgba(0,0,0,0.8);
+    }
+    .hero-h1 span { font-style: italic; }
+    .hero-sub {
+      font-family: var(--font-elegant); font-size: clamp(1.1rem, 2.5vw, 1.4rem);
+      color: #fecdd3; font-style: italic; margin-bottom: 0.75rem;
+    }
+    .hero-desc {
+      font-size: 1rem; color: #fda4af; font-weight: 300;
+      letter-spacing: 0.05em; margin-bottom: 3rem; max-width: 40rem; margin-left: auto; margin-right: auto;
+    }
+    .hero-desc strong { color: #FACC15; font-weight: 600; }
+    .hero-btns { display: flex; flex-wrap: wrap; gap: 1rem; justify-content: center; margin-bottom: 4rem; }
+    .hero-trust {
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 1rem 2rem; font-size: 0.7rem; text-transform: uppercase;
+      letter-spacing: 0.2em; color: #fda4af;
+    }
+    .hero-trust-item { display: flex; align-items: center; gap: 0.5rem; }
+    .hero-trust-item .dot { color: #fda4af; }
+    .scroll-hint {
+      position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
+      z-index: 10; color: #FACC15; display: flex; flex-direction: column;
+      align-items: center; gap: 0.5rem; font-size: 0.65rem;
+      text-transform: uppercase; letter-spacing: 0.3em;
+      animation: bounce 2s infinite;
+    }
+    @keyframes bounce { 0%,100%{transform:translateX(-50%) translateY(0)} 50%{transform:translateX(-50%) translateY(10px)} }
+
+    /* ========== STATS STRIP ========== */
+    .stats-strip {
+      background: linear-gradient(90deg, #7B1C3A, #9B2C4A, #7B1C3A);
+      padding: 3rem 1rem; position: relative; overflow: hidden;
+    }
+    .stats-strip::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(circle, rgba(250,204,21,0.3) 1px, transparent 1px);
+      background-size: 30px 30px; opacity: 0.3;
+    }
+    .stats-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem; position: relative; z-index: 1; max-width: 900px; margin: 0 auto;
+    }
+    @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+    .stat-item { text-align: center; color: #fff; }
+    .stat-icon {
+      width: 3.5rem; height: 3.5rem; border-radius: 50%;
+      background: rgba(250,204,21,0.2); border: 1px solid rgba(250,204,21,0.4);
+      display: flex; align-items: center; justify-content: center;
+      margin: 0 auto 0.75rem;
+    }
+    .stat-icon svg { width: 1.5rem; height: 1.5rem; color: #fde68a; }
+    .stat-num {
+      font-family: var(--font-display); font-size: 2.5rem; font-weight: 900;
+    }
+    .stat-label {
+      font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.25em;
+      color: #fecdd3; margin-top: 0.25rem;
+    }
+
+    /* ========== WHY CHOOSE US ========== */
+    .why-section { padding: 6rem 1rem; background: #fff; }
+    .features-grid {
+      display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 1100px; margin: 0 auto;
+    }
+    @media (min-width: 768px) { .features-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .features-grid { grid-template-columns: repeat(3, 1fr); } }
+    .feature-card {
+      background: #fff; border: 2px solid var(--rose-100); border-radius: 1rem;
+      padding: 2rem; transition: all 0.4s; position: relative; overflow: hidden;
+    }
+    .feature-card:hover { border-color: var(--yellow); box-shadow: 0 20px 60px rgba(123,28,58,0.1); }
+    .feature-icon {
+      width: 4rem; height: 4rem; border-radius: 1rem;
+      background: linear-gradient(135deg, #7B1C3A, #9B2C4A);
+      display: flex; align-items: center; justify-content: center; margin-bottom: 1.25rem;
+      box-shadow: 0 4px 16px rgba(123,28,58,0.3); transition: all 0.3s;
+    }
+    .feature-card:hover .feature-icon { transform: scale(1.1) rotate(6deg); }
+    .feature-icon svg { width: 2rem; height: 2rem; color: #fde68a; }
+    .feature-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--burgundy); margin-bottom: 0.75rem; }
+    .feature-desc { color: #6b7280; line-height: 1.6; }
+
+    /* ========== PACKAGES SECTION ========== */
+    .packages-section {
+      padding: 6rem 1rem;
+      background: var(--dark); position: relative; overflow: hidden;
+    }
+    .packages-section::before {
+      content: ''; position: absolute; inset: 0; opacity: 0.08;
+      background-image: repeating-linear-gradient(45deg, rgba(250,204,21,0.1) 0px, rgba(250,204,21,0.1) 1px, transparent 1px, transparent 30px);
+    }
+    .packages-grid {
+      display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+      max-width: 1200px; margin: 0 auto; position: relative; z-index: 1;
+    }
+    @media (min-width: 768px) { .packages-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .packages-grid { grid-template-columns: repeat(3, 1fr); } }
+    .package-card {
+      border-radius: 1rem; overflow: hidden; cursor: pointer;
+      border: 2px solid rgba(123,28,58,0.4); transition: all 0.4s;
+      background: rgba(26,0,16,0.8);
+    }
+    .package-card:hover { transform: translateY(-8px); border-color: rgba(250,204,21,0.5); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+    .package-img-wrap { position: relative; height: 16rem; overflow: hidden; }
+    .package-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s; }
+    .package-card:hover .package-img-wrap img { transform: scale(1.1); }
+    .pkg-overlay { position: absolute; inset: 0; background: linear-gradient(to top, #1a0010 0%, rgba(26,0,16,0.3) 50%, transparent 100%); }
+    .pkg-badge-price {
+      position: absolute; top: 1rem; right: 1rem;
+      background: linear-gradient(135deg, #FACC15, #d97706);
+      color: #7B1C3A; font-size: 0.7rem; font-weight: 700;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      padding: 0.35rem 0.75rem; border-radius: 9999px;
+    }
+    .pkg-badge-cat {
+      position: absolute; top: 1rem; left: 1rem;
+      background: rgba(123,28,58,0.9); color: #fde68a;
+      font-size: 0.7rem; font-weight: 700; text-transform: uppercase;
+      letter-spacing: 0.1em; padding: 0.35rem 0.75rem; border-radius: 9999px;
+    }
+    .pkg-stars { position: absolute; bottom: 1rem; left: 1rem; color: #FACC15; font-size: 0.85rem; }
+    .package-body { padding: 1.5rem; }
+    .package-name { font-family: var(--font-display); font-size: 1.1rem; font-weight: 700; color: #fff; margin-bottom: 0.5rem; transition: color 0.3s; }
+    .package-card:hover .package-name { color: #FACC15; }
+    .package-desc { font-size: 0.875rem; color: #fda4af; margin-bottom: 1rem; line-height: 1.5; }
+    .package-footer { display: flex; justify-content: space-between; align-items: center; padding-top: 1rem; border-top: 1px solid rgba(250,204,21,0.2); }
+    .package-price { color: #FACC15; font-weight: 700; font-size: 0.95rem; }
+    .pkg-view { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; color: #fda4af; transition: color 0.3s; }
+    .package-card:hover .pkg-view { color: #FACC15; }
+
+    /* ========== PROCESS ========== */
+    .process-section { padding: 6rem 1rem; background: #fff; }
+    .process-grid {
+      display: grid; grid-template-columns: 1fr; gap: 2rem;
+      max-width: 1100px; margin: 0 auto; position: relative;
+    }
+    @media (min-width: 768px) { .process-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) {
+      .process-grid { grid-template-columns: repeat(4, 1fr); }
+      .process-line {
+        position: absolute; top: 2.5rem; left: 0; right: 0; height: 2px;
+        background: linear-gradient(90deg, transparent, #FACC15, transparent);
+      }
+    }
+    .process-step { text-align: center; position: relative; padding: 1.5rem; }
+    .process-num {
+      position: absolute; top: -0.5rem; left: 50%; transform: translateX(-50%);
+      font-family: var(--font-display); font-size: 5rem; font-weight: 900;
+      color: #fff5f5; z-index: 0; line-height: 1;
+    }
+    .process-icon-wrap {
+      position: relative; z-index: 1; margin: 0 auto 1rem;
+      width: 5rem; height: 5rem; border-radius: 50%;
+      background: linear-gradient(135deg, #7B1C3A, #9B2C4A);
+      display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 8px 24px rgba(123,28,58,0.4); border: 4px solid #fff;
+    }
+    .process-icon-wrap svg { width: 2.25rem; height: 2.25rem; color: #fde68a; }
+    .process-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--burgundy); margin-bottom: 0.5rem; }
+    .process-desc { color: #6b7280; font-size: 0.875rem; line-height: 1.6; }
+
+    /* ========== TESTIMONIALS ========== */
+    .testimonials-section { padding: 6rem 1rem; background: linear-gradient(to bottom, rgba(254,243,199,0.3), #fff); }
+    .testimonials-grid {
+      display: grid; grid-template-columns: 1fr; gap: 1.5rem;
+      max-width: 1100px; margin: 0 auto;
+    }
+    @media (min-width: 768px) { .testimonials-grid { grid-template-columns: repeat(3, 1fr); } }
+    .testimonial-card {
+      background: #fff; border: 2px solid var(--rose-100); border-radius: 1.5rem;
+      padding: 2rem; box-shadow: 0 4px 24px rgba(0,0,0,0.06); position: relative;
+      transition: all 0.3s;
+    }
+    .testimonial-card:hover { border-color: var(--yellow); box-shadow: 0 12px 40px rgba(0,0,0,0.1); }
+    .quote-icon {
+      position: absolute; top: 1.25rem; right: 1.25rem;
+      font-size: 3rem; color: #fef9c3; line-height: 1;
+    }
+    .testimonial-stars { color: #FACC15; font-size: 1.1rem; margin-bottom: 1rem; letter-spacing: 2px; }
+    .testimonial-text { color: #374151; line-height: 1.7; margin-bottom: 1.5rem; font-size: 0.9rem; }
+    .testimonial-name { font-family: var(--font-display); font-weight: 700; color: var(--burgundy); }
+    .testimonial-loc { font-size: 0.8rem; color: #9ca3af; margin-top: 0.25rem; }
+    .testimonial-pkg { display: inline-block; margin-top: 0.5rem; font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.25rem 0.75rem; border-radius: 9999px; background: rgba(123,28,58,0.1); color: var(--burgundy); }
+
+    /* ========== FAQ ========== */
+    .faq-section { padding: 6rem 1rem; background: linear-gradient(to bottom, rgba(123,28,58,0.03), #fff); }
+    .faq-list { max-width: 800px; margin: 0 auto; display: flex; flex-direction: column; gap: 1rem; }
+    .faq-item { border: 2px solid var(--rose-100); border-radius: 1rem; overflow: hidden; transition: all 0.3s; }
+    .faq-item:hover { border-color: rgba(123,28,58,0.3); }
+    .faq-q {
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 1.5rem; cursor: pointer; font-weight: 600; color: var(--burgundy);
+      gap: 1rem;
+    }
+    .faq-arrow { font-size: 1.25rem; transition: transform 0.3s; color: var(--burgundy); flex-shrink: 0; }
+    .faq-item.open .faq-arrow { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 1.5rem 1.25rem; color: #6b7280; line-height: 1.7; font-size: 0.9rem; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ========== SOCIAL ========== */
+    .social-section { padding: 6rem 1rem; background: linear-gradient(135deg, #7B1C3A, #4a0a20); }
+    .social-grid {
+      display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem;
+      max-width: 1000px; margin: 0 auto;
+    }
+    @media (min-width: 640px) { .social-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .social-grid { grid-template-columns: repeat(5, 1fr); } }
+    .social-card {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      gap: 0.75rem; padding: 1.5rem; border-radius: 1rem; color: #fff;
+      text-align: center; transition: all 0.3s; cursor: pointer;
+    }
+    .social-card:hover { transform: translateY(-4px) scale(1.03); }
+    .social-icon { font-size: 2.5rem; }
+    .social-name { font-weight: 700; font-size: 1rem; }
+    .social-handle { font-size: 0.8rem; opacity: 0.8; }
+    .social-followers { display: inline-block; margin-top: 0.25rem; padding: 0.2rem 0.5rem; background: rgba(255,255,255,0.2); border-radius: 9999px; font-size: 0.75rem; font-weight: 700; }
+
+    /* ========== VIDEOS ========== */
+    .videos-section { padding: 6rem 1rem; background: #000; }
+    .videos-grid { display: grid; grid-template-columns: 1fr; gap: 1.5rem; max-width: 1100px; margin: 0 auto; }
+    @media (min-width: 1024px) { .videos-grid { grid-template-columns: 2fr 1fr; } }
+    .video-card {
+      position: relative; border-radius: 1rem; overflow: hidden;
+      border: 2px solid rgba(123,28,58,0.4); cursor: pointer;
+      transition: all 0.3s;
+    }
+    .video-card:hover { border-color: rgba(250,204,21,0.6); }
+    .video-card img { width: 100%; display: block; }
+    .video-large img { min-height: 400px; object-fit: cover; }
+    .video-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0.3)); display: flex; align-items: center; justify-content: center; }
+    .play-btn {
+      width: 4rem; height: 4rem; border-radius: 50%;
+      background: #FACC15; display: flex; align-items: center; justify-content: center;
+      box-shadow: 0 0 40px rgba(250,204,21,0.5); transition: transform 0.3s;
+    }
+    .video-large .play-btn { width: 5.5rem; height: 5.5rem; }
+    .video-card:hover .play-btn { transform: scale(1.1); }
+    .play-btn::after { content: '▶'; color: #7B1C3A; font-size: 1.25rem; margin-left: 0.25rem; }
+    .video-large .play-btn::after { font-size: 1.75rem; }
+    .video-info { position: absolute; bottom: 0; left: 0; right: 0; padding: 1.5rem; }
+    .video-title { font-family: var(--font-display); font-size: 1.25rem; color: #fff; font-weight: 700; margin-bottom: 0.25rem; }
+    .video-large .video-title { font-size: 1.75rem; }
+    .video-sub { color: #FACC15; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.2em; }
+    .video-small-grid { display: flex; flex-direction: column; gap: 1.5rem; }
+
+    /* ========== THEME SONG ========== */
+    .song-section {
+      padding: 4rem 1rem;
+      background: linear-gradient(to bottom, var(--dark), #2a0118, #000);
+      border-top: 1px solid rgba(250,204,21,0.2); text-align: center;
+    }
+    .song-badge {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      padding: 0.35rem 1rem; border-radius: 9999px;
+      background: rgba(250,204,21,0.1); border: 1px solid rgba(250,204,21,0.4);
+      color: #FACC15; font-size: 0.75rem; text-transform: uppercase;
+      letter-spacing: 0.3em; font-weight: 700; margin-bottom: 1rem;
+    }
+    .song-title { font-family: var(--font-display); font-size: clamp(2rem, 5vw, 3rem); color: #fff; margin-bottom: 0.5rem; }
+    .song-sub { color: #fecdd3; font-family: var(--font-elegant); font-style: italic; margin-bottom: 2rem; }
+    .video-player-wrap {
+      max-width: 700px; margin: 0 auto;
+      border-radius: 1rem; overflow: hidden;
+      background: rgba(0,0,0,0.6); border: 2px solid rgba(250,204,21,0.3);
+      box-shadow: 0 0 60px rgba(250,204,21,0.15); padding: 0.75rem;
+    }
+    .video-player-wrap video { width: 100%; border-radius: 0.5rem; max-height: 500px; }
+    .video-credit { margin-top: 0.75rem; font-size: 0.7rem; color: rgba(253,164,175,0.6); text-transform: uppercase; letter-spacing: 0.2em; }
+
+    /* ========== FOOTER ========== */
+    .footer { background: var(--dark); padding: 5rem 1rem 2rem; position: relative; overflow: hidden; }
+    .footer-grid {
+      display: grid; grid-template-columns: 1fr; gap: 3rem;
+      max-width: 1200px; margin: 0 auto;
+    }
+    @media (min-width: 768px) { .footer-grid { grid-template-columns: 2fr 1fr 1.5fr 1.5fr; } }
+    .footer-logo-wrap { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .footer-logo { width: 3.5rem; height: 3.5rem; border-radius: 50%; object-fit: cover; border: 2px solid rgba(250,204,21,0.5); }
+    .footer-brand { font-family: var(--font-display); font-size: 1.5rem; color: #FACC15; font-weight: 900; text-transform: uppercase; }
+    .footer-brand-sub { font-size: 0.6rem; color: #fda4af; text-transform: uppercase; letter-spacing: 0.3em; margin-top: 0.2rem; }
+    .footer-about { color: #fecdd3; font-size: 0.85rem; line-height: 1.7; margin-bottom: 1.5rem; max-width: 24rem; }
+    .footer-about strong { color: #FACC15; }
+    .footer-socials { display: flex; gap: 0.5rem; flex-wrap: wrap; }
+    .footer-social-btn {
+      width: 2.5rem; height: 2.5rem; border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.9rem; color: #fff; transition: all 0.2s;
+    }
+    .footer-social-btn:hover { transform: scale(1.15); }
+    .footer-col-title { font-family: var(--font-display); font-size: 0.9rem; font-weight: 700; color: #FACC15; text-transform: uppercase; letter-spacing: 0.2em; margin-bottom: 1.25rem; }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .footer-links a { color: #fda4af; font-size: 0.875rem; transition: color 0.2s; }
+    .footer-links a:hover { color: #FACC15; }
+    .footer-services { list-style: none; display: flex; flex-direction: column; gap: 0.75rem; }
+    .footer-services li { color: #fda4af; font-size: 0.875rem; display: flex; align-items: flex-start; gap: 0.5rem; }
+    .footer-services li::before { content: '✦'; color: #FACC15; flex-shrink: 0; margin-top: 0.15rem; }
+    .footer-contact { display: flex; flex-direction: column; gap: 1rem; }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 0.75rem; }
+    .footer-contact-icon { color: #FACC15; flex-shrink: 0; font-size: 1rem; margin-top: 0.1rem; }
+    .footer-contact-main { font-weight: 700; color: #fde68a; font-size: 1.1rem; }
+    .footer-contact-sub { font-size: 0.75rem; color: #fda4af; margin-top: 0.1rem; }
+    .footer-contact-text { color: #fda4af; font-size: 0.875rem; line-height: 1.5; }
+    .footer-bottom { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid rgba(123,28,58,0.4); max-width: 1200px; margin-left: auto; margin-right: auto; }
+    .footer-bottom-title { font-family: var(--font-display); font-size: 2rem; font-style: italic; text-align: center; margin-bottom: 1rem; }
+    .footer-bottom-quote { color: #fda4af; font-size: 0.9rem; font-family: var(--font-elegant); font-style: italic; text-align: center; }
+    .footer-copy { display: flex; flex-direction: column; align-items: center; gap: 0.5rem; text-align: center; font-size: 0.75rem; color: #9B2C4A; margin-top: 1.5rem; }
+    @media (min-width: 768px) { .footer-copy { flex-direction: row; justify-content: space-between; } }
+    .footer-copy strong { color: #FACC15; }
+
+    /* ========== DEV CREDIT ========== */
+    .dev-credit { background: linear-gradient(135deg, #000, #1a1a1a); padding: 2rem 1rem; text-align: center; }
+    .dev-name { font-size: 1.5rem; font-weight: 700; color: #00ffcc; letter-spacing: 2px; }
+    .dev-sub { color: #aaa; font-size: 0.875rem; margin-top: 0.25rem; margin-bottom: 1rem; }
+    .dev-link { color: #00ffcc; font-weight: 700; display: inline-flex; align-items: center; gap: 0.5rem; transition: opacity 0.2s; }
+    .dev-link:hover { opacity: 0.8; }
+    .dev-info { color: #777; font-size: 0.8rem; margin-top: 0.5rem; }
+    .dev-info b { color: #00ffcc; }
+    .dev-divider { border: none; height: 1px; background: #333; max-width: 400px; margin: 1rem auto; }
+    .dev-copy { font-size: 0.75rem; color: #555; }
+
+    /* ========== BOOKING PAGE ========== */
+    .book-hero {
+      background: linear-gradient(135deg, var(--dark), var(--burgundy), #4a0a20);
+      padding: 5rem 1rem; text-align: center; position: relative; overflow: hidden;
+    }
+    .book-hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: repeating-linear-gradient(45deg, #ffffff 0px, #ffffff 1px, transparent 1px, transparent 20px);
+      opacity: 0.08;
+    }
+    .book-hero h1 { font-family: var(--font-display); font-size: clamp(2.5rem, 7vw, 5rem); color: #fff; text-transform: uppercase; letter-spacing: 0.1em; font-weight: 900; position: relative; z-index: 1; }
+    .book-hero p { color: #fecdd3; font-size: 1.1rem; max-width: 30rem; margin: 1rem auto 0; position: relative; z-index: 1; }
+    .trust-bar { background: #FACC15; padding: 1rem; }
+    .trust-bar-inner { display: flex; flex-wrap: wrap; justify-content: center; gap: 1.5rem; font-weight: 700; text-transform: uppercase; font-size: 0.75rem; letter-spacing: 0.15em; color: #7B1C3A; }
+    .trust-item { display: flex; align-items: center; gap: 0.4rem; }
+    .book-layout { display: grid; grid-template-columns: 1fr; gap: 3rem; max-width: 1200px; margin: 4rem auto; padding: 0 1rem; }
+    @media (min-width: 1024px) { .book-layout { grid-template-columns: 1fr 2fr; } }
+
+    /* Sidebar */
+    .contact-card { background: linear-gradient(135deg, #7B1C3A, #4a0a20); border-radius: 1.5rem; padding: 2rem; color: #fff; box-shadow: 0 8px 40px rgba(0,0,0,0.3); }
+    .contact-card-title { font-family: var(--font-display); font-size: 0.875rem; font-weight: 700; color: #FACC15; text-transform: uppercase; letter-spacing: 0.3em; margin-bottom: 1.5rem; padding-bottom: 1rem; border-bottom: 1px solid rgba(255,255,255,0.15); }
+    .contact-link {
+      display: flex; align-items: center; gap: 1rem;
+      border-radius: 0.75rem; padding: 1rem; margin-bottom: 0.75rem; transition: all 0.2s; text-decoration: none; color: #fff;
+    }
+    .contact-link-icon { width: 2.75rem; height: 2.75rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1.25rem; }
+    .contact-link-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.2em; color: #fda4af; }
+    .contact-link-val { font-weight: 700; }
+    .contact-link.whatsapp { background: rgba(34,197,94,0.2); border: 1px solid rgba(34,197,94,0.3); }
+    .contact-link.whatsapp:hover { background: rgba(34,197,94,0.3); }
+    .contact-link.whatsapp .contact-link-icon { background: #22c55e; }
+    .contact-link.telegram { background: rgba(59,130,246,0.2); border: 1px solid rgba(59,130,246,0.3); }
+    .contact-link.telegram:hover { background: rgba(59,130,246,0.3); }
+    .contact-link.telegram .contact-link-icon { background: #3b82f6; }
+    .contact-link.call { background: rgba(250,204,21,0.2); border: 1px solid rgba(250,204,21,0.3); }
+    .contact-link.call:hover { background: rgba(250,204,21,0.3); }
+    .contact-link.call .contact-link-icon { background: #FACC15; }
+    .contact-link.call .contact-link-icon { color: #7B1C3A; }
+    .contact-info { display: flex; align-items: flex-start; gap: 1rem; padding: 1rem; background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.15); border-radius: 0.75rem; }
+    .booking-note { background: #fffbeb; border: 1px solid #fde68a; border-radius: 0.75rem; padding: 1.25rem; margin-top: 1rem; }
+    .booking-note strong { color: var(--burgundy); display: block; margin-bottom: 0.35rem; font-size: 0.9rem; }
+    .booking-note p { color: #6b7280; font-size: 0.8rem; line-height: 1.6; }
+
+    /* UPI Card */
+    .upi-card {
+      background: linear-gradient(135deg, #7c3aed, #4338ca); border-radius: 1.5rem;
+      padding: 1.5rem; color: #fff; margin-top: 1rem; text-align: center;
+    }
+    .upi-title { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.2em; color: #c4b5fd; margin-bottom: 1rem; padding-bottom: 0.75rem; border-bottom: 1px solid rgba(255,255,255,0.15); }
+    .upi-qr { display: flex; justify-content: center; margin-bottom: 1rem; }
+    .upi-qr img { width: 10rem; height: 10rem; border-radius: 0.75rem; background: #fff; padding: 0.5rem; }
+    .upi-id-box { background: rgba(255,255,255,0.15); border-radius: 0.75rem; padding: 0.75rem; margin-bottom: 0.5rem; }
+    .upi-id-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: #c4b5fd; }
+    .upi-id-val { font-weight: 700; font-size: 1.1rem; letter-spacing: 0.05em; }
+    .upi-name-box { background: rgba(255,255,255,0.1); border-radius: 0.75rem; padding: 0.75rem; margin-bottom: 0.75rem; }
+    .upi-name-label { font-size: 0.65rem; text-transform: uppercase; letter-spacing: 0.2em; color: #c4b5fd; }
+    .upi-name-val { font-weight: 700; }
+    .upi-note { font-size: 0.75rem; color: #c4b5fd; line-height: 1.5; }
+
+    /* Form */
+    .form-card { background: #fff; border: 2px solid #ffe4e6; border-radius: 1.5rem; padding: 2rem; box-shadow: 0 20px 60px rgba(0,0,0,0.08); }
+    .form-header { display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 1px solid #ffe4e6; }
+    .form-header-icon { width: 2.5rem; height: 2.5rem; background: var(--burgundy); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 1rem; }
+    .form-header-title { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: var(--burgundy); text-transform: uppercase; letter-spacing: 0.15em; }
+    .form-header-sub { color: #9ca3af; font-size: 0.85rem; margin-top: 0.2rem; }
+    .form-section { margin-bottom: 2.5rem; }
+    .form-step-header { display: flex; align-items: center; gap: 0.75rem; margin-bottom: 1.25rem; }
+    .step-num { width: 2rem; height: 2rem; background: var(--burgundy); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fde68a; font-weight: 700; font-size: 0.875rem; flex-shrink: 0; }
+    .step-title { font-weight: 700; color: var(--burgundy); text-transform: uppercase; letter-spacing: 0.15em; font-size: 0.85rem; }
+    .form-grid { display: grid; grid-template-columns: 1fr; gap: 1.25rem; padding-left: 2.75rem; }
+    @media (min-width: 640px) { .form-grid { grid-template-columns: repeat(2, 1fr); } }
+    .form-group { display: flex; flex-direction: column; gap: 0.35rem; }
+    .form-group.full { grid-column: 1 / -1; }
+    .form-label { font-weight: 600; font-size: 0.85rem; color: #374151; }
+    .form-input, .form-select {
+      height: 3rem; border: 1.5px solid rgba(123,28,58,0.2); border-radius: 0.5rem;
+      padding: 0 0.875rem; font-size: 0.9rem; width: 100%; outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s; background: #fff; color: #1f2937;
+    }
+    .form-input:focus, .form-select:focus { border-color: var(--burgundy); box-shadow: 0 0 0 3px rgba(123,28,58,0.1); }
+    .form-select { appearance: none; cursor: pointer; }
+    .submit-btn {
+      width: 100%; height: 4rem; border-radius: 0.75rem; font-weight: 700;
+      font-size: 1.1rem; cursor: pointer; border: none; transition: all 0.3s;
+      background: linear-gradient(135deg, #7B1C3A, #9B2C4A); color: #fff;
+      display: flex; align-items: center; justify-content: center; gap: 0.75rem;
+      font-family: var(--font-display); letter-spacing: 0.05em;
+      box-shadow: 0 4px 24px rgba(123,28,58,0.4);
+    }
+    .submit-btn:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(123,28,58,0.5); }
+    .submit-note { text-align: center; font-size: 0.75rem; color: #9ca3af; margin-top: 0.75rem; }
+
+    /* Success screen */
+    .success-screen { display: none; flex-direction: column; align-items: center; text-align: center; padding: 3rem 1rem; gap: 1.5rem; }
+    .success-screen.show { display: flex; }
+    .success-icon { width: 6rem; height: 6rem; background: #dcfce7; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 3rem; }
+    .success-title { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--burgundy); }
+    .success-desc { color: #6b7280; max-width: 24rem; }
+    .send-btns { display: flex; flex-direction: column; gap: 1rem; width: 100%; max-width: 22rem; }
+    .send-wa { display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 1rem; border-radius: 0.75rem; background: #22c55e; color: #fff; font-weight: 700; font-size: 1rem; transition: all 0.2s; }
+    .send-wa:hover { background: #16a34a; transform: translateY(-2px); }
+    .send-tg { display: flex; align-items: center; justify-content: center; gap: 0.75rem; padding: 1rem; border-radius: 0.75rem; background: #3b82f6; color: #fff; font-weight: 700; font-size: 1rem; transition: all 0.2s; }
+    .send-tg:hover { background: #2563eb; transform: translateY(-2px); }
+    .send-tip { background: #fffbeb; border: 1px solid #fde68a; border-radius: 0.75rem; padding: 0.75rem 1rem; font-size: 0.8rem; color: #92400e; max-width: 22rem; line-height: 1.5; }
+    .success-upi { background: linear-gradient(135deg, #f5f3ff, #eef2ff); border: 2px solid #c4b5fd; border-radius: 1.25rem; padding: 1.25rem; text-align: center; max-width: 22rem; width: 100%; }
+    .success-upi-title { color: #5b21b6; font-weight: 700; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 0.15em; margin-bottom: 0.75rem; }
+    .success-upi img { width: 8rem; height: 8rem; margin: 0 auto 0.5rem; border-radius: 0.5rem; background: #fff; padding: 0.25rem; }
+    .success-upi .upi-id { color: #4338ca; font-weight: 700; font-size: 1rem; }
+    .success-upi .upi-person { color: #7c3aed; font-size: 0.875rem; }
+    .success-upi .upi-apps { color: #6b7280; font-size: 0.75rem; margin-top: 0.35rem; }
+    .back-btn { font-size: 0.875rem; color: var(--burgundy); text-decoration: underline; cursor: pointer; background: none; border: none; }
+
+    /* ========== REAL WEDDING PAGE ========== */
+    .rw-filter-bar { background: var(--burgundy); padding: 1rem; overflow-x: auto; }
+    .rw-filters { display: flex; gap: 0.75rem; justify-content: center; flex-wrap: wrap; padding: 0 1rem; }
+    .filter-btn {
+      padding: 0.5rem 1.25rem; border-radius: 9999px; font-size: 0.75rem;
+      font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em;
+      transition: all 0.2s; border: none; cursor: pointer; white-space: nowrap;
+      background: rgba(255,255,255,0.2); color: #fff;
+    }
+    .filter-btn.active { background: #FACC15; color: var(--burgundy); }
+    .filter-btn:hover:not(.active) { background: rgba(255,255,255,0.3); }
+    .gallery-section { max-width: 1400px; margin: 4rem auto; padding: 0 1rem; }
+    .gallery-cat { margin-bottom: 6rem; }
+    .gallery-cat-header { display: flex; flex-direction: column; gap: 1rem; align-items: flex-start; justify-content: space-between; margin-bottom: 2rem; padding-bottom: 1.5rem; border-bottom: 2px solid var(--rose-100); }
+    @media (min-width: 768px) { .gallery-cat-header { flex-direction: row; align-items: flex-end; } }
+    .gallery-cat-name { font-family: var(--font-display); font-size: 2rem; font-weight: 700; color: var(--burgundy); text-transform: uppercase; letter-spacing: 0.1em; margin: 0.35rem 0 0.25rem; }
+    .gallery-cat-desc { color: #6b7280; max-width: 36rem; font-size: 0.9rem; }
+    .gallery-cat-price { background: var(--burgundy); color: #fde68a; font-weight: 700; padding: 0.4rem 1.25rem; border-radius: 9999px; font-size: 0.875rem; white-space: nowrap; }
+    .gallery-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+    @media (max-width: 640px) { .gallery-grid { grid-template-columns: 1fr; } }
+    @media (min-width: 641px) and (max-width: 1023px) { .gallery-grid { grid-template-columns: repeat(2, 1fr); } }
+    .gallery-img { border-radius: 0.75rem; overflow: hidden; aspect-ratio: 4/3; }
+    .gallery-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s; cursor: pointer; }
+    .gallery-img:hover img { transform: scale(1.07); }
+    .cameras-tag { display: inline-block; font-size: 0.8rem; padding: 0.25rem 0.75rem; background: rgba(123,28,58,0.1); color: var(--burgundy); border-radius: 9999px; margin-top: 0.35rem; }
+
+    /* ========== WEDDING VENDOR PAGE ========== */
+    .vendor-hero {
+      position: relative; min-height: 50vh; display: flex; align-items: center;
+      justify-content: center; overflow: hidden;
+    }
+    .vendor-hero-bg { position: absolute; inset: 0; }
+    .vendor-hero-bg img { width: 100%; height: 100%; object-fit: cover; opacity: 0.4; }
+    .vendor-hero-overlay { position: absolute; inset: 0; background: linear-gradient(135deg, rgba(26,0,16,0.85), rgba(123,28,58,0.7)); }
+    .vendor-hero-content { position: relative; z-index: 1; text-align: center; padding: 4rem 1rem; }
+    .vendor-grid { display: grid; grid-template-columns: 1fr; gap: 2rem; max-width: 1200px; margin: 4rem auto; padding: 0 1rem; }
+    @media (min-width: 768px) { .vendor-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1280px) { .vendor-grid { grid-template-columns: repeat(3, 1fr); } }
+    .vendor-card { border-radius: 1.25rem; overflow: hidden; border: 2px solid var(--rose-100); background: #fff; transition: all 0.3s; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .vendor-card:hover { box-shadow: 0 16px 48px rgba(0,0,0,0.1); transform: translateY(-4px); border-color: rgba(123,28,58,0.3); }
+    .vendor-card.featured { border-color: var(--burgundy); box-shadow: 0 8px 40px rgba(123,28,58,0.2); }
+    .vendor-img-wrap { position: relative; height: 12rem; overflow: hidden; }
+    .vendor-img-wrap img { width: 100%; height: 100%; object-fit: cover; }
+    .vendor-featured-badge { position: absolute; top: 1rem; right: 1rem; background: linear-gradient(135deg, #FACC15, #d97706); color: var(--burgundy); font-size: 0.7rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; padding: 0.3rem 0.75rem; border-radius: 9999px; }
+    .vendor-type-badge { position: absolute; top: 1rem; left: 1rem; background: rgba(26,0,16,0.8); color: #fde68a; font-size: 0.7rem; font-weight: 700; padding: 0.3rem 0.75rem; border-radius: 9999px; }
+    .vendor-body { padding: 1.5rem; }
+    .vendor-name { font-family: var(--font-display); font-size: 1.25rem; font-weight: 700; color: #1f2937; margin-bottom: 0.35rem; }
+    .vendor-loc { color: #6b7280; font-size: 0.8rem; display: flex; align-items: center; gap: 0.35rem; margin-bottom: 0.5rem; }
+    .vendor-rating { color: #FACC15; font-size: 0.9rem; letter-spacing: 2px; margin-bottom: 0.75rem; }
+    .vendor-desc { color: #6b7280; font-size: 0.875rem; line-height: 1.6; margin-bottom: 1rem; }
+    .vendor-services { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-bottom: 1rem; }
+    .vendor-tag { font-size: 0.7rem; font-weight: 600; padding: 0.2rem 0.6rem; border-radius: 9999px; background: rgba(123,28,58,0.08); color: var(--burgundy); }
+    .vendor-footer { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; border-top: 1px solid var(--rose-100); }
+    .vendor-price { font-weight: 700; color: var(--burgundy); font-size: 0.9rem; }
+    .vendor-contact { display: flex; align-items: center; gap: 0.5rem; font-size: 0.8rem; font-weight: 600; color: #22c55e; text-decoration: none; }
+    .vendor-contact:hover { color: #16a34a; }
+
+    /* ========== FLOATING BUTTONS ========== */
+    .floating-contact { position: fixed; bottom: 1.5rem; right: 1.5rem; z-index: 99; display: flex; flex-direction: column; gap: 0.75rem; align-items: flex-end; }
+    .fab { width: 3.25rem; height: 3.25rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #fff; box-shadow: 0 4px 16px rgba(0,0,0,0.3); transition: all 0.3s; text-decoration: none; border: none; cursor: pointer; }
+    .fab:hover { transform: scale(1.1); }
+    .fab-wa { background: #22c55e; }
+    .fab-tg { background: #3b82f6; }
+    .fab-call { background: var(--burgundy); }
+    .fab-label { display: none; }
+    @media (min-width: 768px) {
+      .floating-contact { flex-direction: row; align-items: center; }
+      .fab { width: auto; padding: 0 1rem; border-radius: 9999px; height: 3rem; gap: 0.5rem; font-size: 1rem; }
+      .fab-label { display: inline; font-size: 0.85rem; font-weight: 700; }
+    }
+
+    /* Scroll progress */
+    #progress-bar { position: fixed; top: 0; left: 0; height: 3px; background: linear-gradient(90deg, #7B1C3A, #FACC15); z-index: 200; transition: width 0.1s; }
+
+    /* Animations */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(30px); } to { opacity: 1; transform: translateY(0); } }
+    .fade-in { animation: fadeInUp 0.7s ease forwards; }
+    .fade-in-2 { animation: fadeInUp 0.7s 0.2s ease forwards; opacity: 0; }
+    .fade-in-3 { animation: fadeInUp 0.7s 0.4s ease forwards; opacity: 0; }
+
+    /* Inline SVG icons helper */
+    svg { display: inline-block; vertical-align: middle; }
+
+    /* Responsive */
+    @media (max-width: 480px) {
+      .hero-h1 { font-size: 3rem; }
+      .section-title { font-size: 2rem; }
+      .form-card { padding: 1.25rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- SCROLL PROGRESS BAR -->
+<div id="progress-bar" style="width:0%"></div>
+
+<!-- TOP BAR -->
+<div class="top-bar">
+  <div class="top-bar-inner">
+    <div class="top-bar-item">📞 <span>9110066743</span></div>
+    <div class="top-bar-item">📍 Saharsa, Bihar</div>
+    <div class="top-bar-item">🏆 500+ WEDDINGS • 5★ RATED</div>
+  </div>
+</div>
+
+<!-- MAIN HEADER -->
+<header id="main-header">
+  <div class="header-inner">
+    <!-- Logo -->
+    <a href="#" onclick="showPage('home')" class="logo-wrap">
+      <img src="images/srk-logo.jpeg" alt="S.R.K Studio" class="logo-img" onerror="this.style.display='none'" />
+      <div>
+        <div class="logo-text-main">S.R.K Studio</div>
+        <div class="logo-text-sub">CEO • Sharvan Yadav</div>
+      </div>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav>
+      <a href="#" onclick="showPage('home')" class="nav-link active" id="nav-home">🏠 Home</a>
+      <a href="#" onclick="showPage('vendor')" class="nav-link" id="nav-vendor">🏪 Wedding Vendor</a>
+      <a href="#" onclick="showPage('realwedding')" class="nav-link" id="nav-realwedding">♥ Real Wedding</a>
+      <a href="#" onclick="showPage('booknow')" class="nav-link highlight" id="nav-booknow">📅 Book Now</a>
+    </nav>
+
+    <!-- CTA + Hamburger -->
+    <div style="display:flex;align-items:center;gap:0.5rem">
+      <a href="tel:+919110066743" class="btn-call">📞 Call</a>
+      <button class="hamburger" onclick="toggleMobile()" id="hamburger" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Nav -->
+  <div class="mobile-nav" id="mobile-nav">
+    <a href="#" onclick="showPage('home');closeMobile()" class="mobile-nav-link">🏠 Home</a>
+    <a href="#" onclick="showPage('vendor');closeMobile()" class="mobile-nav-link">🏪 Wedding Vendor</a>
+    <a href="#" onclick="showPage('realwedding');closeMobile()" class="mobile-nav-link">♥ Real Wedding</a>
+    <a href="#" onclick="showPage('booknow');closeMobile()" class="mobile-nav-link highlight">📅 Book Now</a>
+  </div>
+</header>
+
+<!-- ============================================================ -->
+<!-- HOME PAGE -->
+<!-- ============================================================ -->
+<div id="page-home" class="page active">
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-bg">
+      <img src="images/hero.png" alt="S.R.K Studio Wedding Photography" />
+      <div class="hero-overlay-b"></div>
+      <div class="hero-overlay-r"></div>
+    </div>
+    <div class="hero-content fade-in">
+      <div class="hero-badge">✨ World-Class Wedding Photography ✨</div>
+      <h1 class="hero-h1">
+        Capture the<br />
+        <span class="text-grad-gold">Eternity</span>
+      </h1>
+      <p class="hero-sub">Bihar's #1 Cinematic Wedding Photography &amp; Videography Studio</p>
+      <div class="gold-divider" style="width:12rem;margin:1.5rem auto;"></div>
+      <p class="hero-desc">
+        From intimate moments to grand royal weddings — we craft cinematic films that you'll cherish forever.
+        <strong>10+ years</strong>, <strong>500+ weddings</strong>, one promise: perfection.
+      </p>
+      <div class="hero-btns">
+        <a href="#" onclick="showPage('booknow')" class="btn-luxe">Book Your Wedding →</a>
+        <a href="#" onclick="showPage('realwedding')" class="btn-gold">▶ View Our Work</a>
+      </div>
+      <div class="hero-trust">
+        <span class="hero-trust-item">⭐ 5★ on Google</span>
+        <span class="dot">•</span>
+        <span class="hero-trust-item">🏆 Award Winning</span>
+        <span class="dot">•</span>
+        <span class="hero-trust-item">🛡️ 100% Trusted</span>
+        <span class="dot">•</span>
+        <span class="hero-trust-item">🗺️ All India Service</span>
+      </div>
+    </div>
+    <div class="scroll-hint">↓ Scroll Down</div>
+  </section>
+
+  <!-- STATS STRIP -->
+  <section class="stats-strip">
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-icon">💑</div>
+        <div class="stat-num text-grad-gold">500+</div>
+        <div class="stat-label">Happy Couples</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">📷</div>
+        <div class="stat-num text-grad-gold">1000+</div>
+        <div class="stat-label">Events Covered</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">🏆</div>
+        <div class="stat-num text-grad-gold">10+</div>
+        <div class="stat-label">Years Experience</div>
+      </div>
+      <div class="stat-item">
+        <div class="stat-icon">✈️</div>
+        <div class="stat-num text-grad-gold">50+</div>
+        <div class="stat-label">Cities Travelled</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHY S.R.K -->
+  <section class="why-section">
+    <div class="section-head">
+      <div class="section-label text-burgundy">✨ Why S.R.K Studio ✨</div>
+      <h2 class="section-title text-grad-burgundy">The S.R.K Difference</h2>
+      <div class="gold-divider" style="width:8rem;margin:1rem auto 1.5rem;"></div>
+      <p class="section-sub" style="color:#6b7280;">Six reasons why couples across India trust S.R.K Studio for the most important day of their lives</p>
+    </div>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🏆</div>
+        <h3 class="feature-title">Award Winning</h3>
+        <p class="feature-desc">Recognized as Bihar's top wedding studio with multiple industry awards</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">📷</div>
+        <h3 class="feature-title">Latest Equipment</h3>
+        <p class="feature-desc">Sony A7IV, Canon R5, DJI drones — only the best gear for your wedding</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🎬</div>
+        <h3 class="feature-title">Cinematic Films</h3>
+        <p class="feature-desc">Hollywood-style edits with color grading, slow motion &amp; drone shots</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">👥</div>
+        <h3 class="feature-title">500+ Weddings</h3>
+        <p class="feature-desc">A decade of experience capturing every kind of Indian wedding</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🛡️</div>
+        <h3 class="feature-title">100% Trust</h3>
+        <p class="feature-desc">Advance protection, contract-based booking, no hidden charges</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">⚡</div>
+        <h3 class="feature-title">Fast Delivery</h3>
+        <p class="feature-desc">Highlight reel in 7 days, full album in 30 days — guaranteed</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- PACKAGES -->
+  <section class="packages-section">
+    <div class="section-head" style="color:#fff;">
+      <div class="section-label" style="color:#FACC15;">📷 Our Packages 📷</div>
+      <h2 class="section-title text-grad-gold">Choose Your Camera</h2>
+      <div class="gold-divider" style="width:8rem;margin:1rem auto 1.5rem;"></div>
+      <p class="section-sub" style="color:#fecdd3;">Seven world-class packages — from intimate gatherings to grand royal celebrations</p>
+    </div>
+    <div class="packages-grid">
+      <div class="package-card" onclick="showPage('realwedding')">
+        <div class="package-img-wrap">
+          <img src="images/aplus-1.png" alt="A+ Category" onerror="this.src='images/hero.png'" />
+          <div class="pkg-overlay"></div>
+          <div class="pkg-badge-price">Rs 50K–1L</div>
+          <div class="pkg-badge-cat">A+</div>
+          <div class="pkg-stars">★★★★★</div>
+        </div>
+        <div class="package-body">
+          <h3 class="package-name">A+ Category — Cinematic Excellence</h3>
+          <p class="package-desc">RED Cinema Camera, ARRI Alexa Mini + DJI Inspire 2. Film-like videography for grand weddings.</p>
+          <div class="package-footer">
+            <span class="package-price">Rs 50,000 – Rs 1,00,000</span>
+            <span class="pkg-view">View →</span>
+          </div>
+        </div>
+      </div>
+      <div class="package-card" onclick="showPage('realwedding')">
+        <div class="package-img-wrap">
+          <img src="images/a-1.png" alt="A Category" onerror="this.src='images/hero.png'" />
+          <div class="pkg-overlay"></div>
+          <div class="pkg-badge-price">Rs 35K–85K</div>
+          <div class="pkg-badge-cat">A</div>
+          <div class="pkg-stars">★★★★★</div>
+        </div>
+        <div class="package-body">
+          <h3 class="package-name">A Category — Filmy Experience</h3>
+          <p class="package-desc">Sony A7R V, Canon EOS R5 + DJI Mavic 3 Pro. Cinematic storytelling with drone shots.</p>
+          <div class="package-footer">
+            <span class="package-price">Rs 35,000 – Rs 85,000</span>
+            <span class="pkg-view">View →</span>
+          </div>
+        </div>
+      </div>
+      <div class="package-card" onclick="showPage('realwedding')">
+        <div class="package-img-wrap">
+          <img src="images/b-1.png" alt="B Category" onerror="this.src='images/hero.png'" />
+          <div class="pkg-overlay"></div>
+          <div class="pkg-badge-price">Rs 30K–60K</div>
+          <div class="pkg-badge-cat">B</div>
+          <div class="pkg-stars">★★★★★</div>
+        </div>
+        <div class="package-body">
+          <h3 class="package-name">B Category — High Quality</h3>
+          <p class="package-desc">Sony A7 IV, Canon EOS R6 Mark II. Professional cameras, outstanding results.</p>
+          <div class="package-footer">
+            <span class="package-price">Rs 30,000 – Rs 60,000</span>
+            <span class="pkg-view">View →</span>
+          </div>
+        </div>
+      </div>
+      <div class="package-card" onclick="showPage('realwedding')">
+        <div class="package-img-wrap">
+          <img src="images/c-1.png" alt="C Category" onerror="this.src='images/hero.png'" />
+          <div class="pkg-overlay"></div>
+          <div class="pkg-badge-price">Rs 27K–45K</div>
+          <div class="pkg-badge-cat">C</div>
+          <div class="pkg-stars">★★★★★</div>
+        </div>
+        <div class="package-body">
+          <h3 class="package-name">C Category — 4K Excellence</h3>
+          <p class="package-desc">Canon EOS R50, Sony ZV-E1. Crystal clear 4K resolution for your wedding.</p>
+          <div class="package-footer">
+            <span class="package-price">Rs 27,000 – Rs 45,000</span>
+            <span class="pkg-view">View →</span>
+          </div>
+        </div>
+      </div>
+      <div class="package-card" onclick="showPage('realwedding')">
+        <div class="package-img-wrap">
+          <img src="images/d-1.png" alt="D Category" onerror="this.src='images/hero.png'" />
+          <div class="pkg-overlay"></div>
+          <div class="pkg-badge-price">Rs 23K–35K</div>
+          <div class="pkg-badge-cat">D</div>
+          <div class="pkg-stars">★★★★★</div>
+        </div>
+        <div class="package-body">
+          <h3 class="package-name">D Category — Professional Value</h3>
+          <p class="package-desc">Sony a6700, Canon EOS 90D. Professional photography at great value.</p>
+          <div class="package-footer">
+            <span class="package-price">Rs 23,000 – Rs 35,000</span>
+            <span class="pkg-view">View →</span>
+          </div>
+        </div>
+      </div>
+      <div class="package-card" onclick="showPage('realwedding')">
+        <div class="package-img-wrap">
+          <img src="images/e-1.png" alt="E Category" onerror="this.src='images/hero.png'" />
+          <div class="pkg-overlay"></div>
+          <div class="pkg-badge-price">Rs 18K–25K</div>
+          <div class="pkg-badge-cat">E</div>
+          <div class="pkg-stars">★★★★★</div>
+        </div>
+        <div class="package-body">
+          <h3 class="package-name">E Category — Essential Package</h3>
+          <p class="package-desc">Canon EOS M50 Mark II, Sony a6400. Perfect for intimate weddings.</p>
+          <div class="package-footer">
+            <span class="package-price">Rs 18,000 – Rs 25,000</span>
+            <span class="pkg-view">View →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:3rem;">
+      <a href="#" onclick="showPage('booknow')" class="btn-gold">Book Now →</a>
+    </div>
+  </section>
+
+  <!-- HOW WE WORK -->
+  <section class="process-section">
+    <div class="section-head">
+      <div class="section-label text-burgundy">Simple 4-Step Process</div>
+      <h2 class="section-title text-grad-burgundy">How We Work</h2>
+      <div class="gold-divider" style="width:8rem;margin:1rem auto 1.5rem;"></div>
+      <p class="section-sub" style="color:#6b7280;">From first call to final delivery — a smooth, transparent journey</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-line"></div>
+      <div class="process-step">
+        <div class="process-num">01</div>
+        <div class="process-icon-wrap">📞</div>
+        <h3 class="process-title">Discovery Call</h3>
+        <p class="process-desc">WhatsApp / call us to discuss date, venue, package &amp; vision</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">02</div>
+        <div class="process-icon-wrap">✨</div>
+        <h3 class="process-title">Custom Quote</h3>
+        <p class="process-desc">We create a personalised plan based on your wedding scale &amp; needs</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">03</div>
+        <div class="process-icon-wrap">✅</div>
+        <h3 class="process-title">Book &amp; Plan</h3>
+        <p class="process-desc">Confirm date with token amount, pre-wedding planning &amp; shot list</p>
+      </div>
+      <div class="process-step">
+        <div class="process-num">04</div>
+        <div class="process-icon-wrap">❤️</div>
+        <h3 class="process-title">Capture &amp; Deliver</h3>
+        <p class="process-desc">Wedding day magic, then highlight in 7 days, full delivery in 30</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- TESTIMONIALS -->
+  <section class="testimonials-section">
+    <div class="section-head">
+      <div class="section-label text-burgundy">Happy Clients</div>
+      <h2 class="section-title text-grad-burgundy">Words of Love</h2>
+      <div class="gold-divider" style="width:8rem;margin:1rem auto;"></div>
+    </div>
+    <div class="testimonials-grid">
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">S.R.K Studio ne humari shaadi ko filmi bana diya! Cinematic video dekh ke aankhon mein aansu aa gaye. Best studio in Bihar — har shot perfect!</p>
+        <div class="testimonial-name">Rahul &amp; Priya</div>
+        <div class="testimonial-loc">📍 Saharsa, Bihar</div>
+        <span class="testimonial-pkg">A+ Category — Jan 2026</span>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Bahut professional team hai. Photos itne achhe aaye ki humne 3 baar album print karaya! Sharvan bhai ka kaam lajawaab hai. Highly recommended!</p>
+        <div class="testimonial-name">Amit &amp; Sunita</div>
+        <div class="testimonial-loc">📍 Patna, Bihar</div>
+        <span class="testimonial-pkg">A Category — Dec 2025</span>
+      </div>
+      <div class="testimonial-card">
+        <div class="quote-icon">"</div>
+        <div class="testimonial-stars">★★★★★</div>
+        <p class="testimonial-text">Budget mein best quality! B Category liya tha lekin results A+ jaisa laga. Drone shots toh dil jeet liye. Same-day highlight reel ne sab ko shock kar diya!</p>
+        <div class="testimonial-name">Vijay &amp; Kavya</div>
+        <div class="testimonial-loc">📍 Muzaffarpur, Bihar</div>
+        <span class="testimonial-pkg">B Category — Nov 2025</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- SOCIAL MEDIA -->
+  <section class="social-section">
+    <div class="section-head">
+      <div class="section-label" style="color:#FACC15;">Stay Connected</div>
+      <h2 class="section-title text-grad-gold">Follow Our Journey</h2>
+      <div class="gold-divider" style="width:8rem;margin:1rem auto 1.5rem;"></div>
+      <p class="section-sub" style="color:#fecdd3;">Behind-the-scenes, latest weddings, and cinematic teasers — daily updates across all platforms</p>
+    </div>
+    <div class="social-grid">
+      <a href="#" class="social-card" style="background:linear-gradient(135deg,#e1306c,#c13584,#fd1d1d);">
+        <div class="social-icon">📸</div>
+        <div class="social-name">Instagram</div>
+        <div class="social-handle">@srk.studio</div>
+        <span class="social-followers">25K+</span>
+      </a>
+      <a href="#" class="social-card" style="background:linear-gradient(135deg,#1877f2,#0d5ac1);">
+        <div class="social-icon">👤</div>
+        <div class="social-name">Facebook</div>
+        <div class="social-handle">S.R.K Studio</div>
+        <span class="social-followers">18K+</span>
+      </a>
+      <a href="#" class="social-card" style="background:linear-gradient(135deg,#ff0000,#c00);">
+        <div class="social-icon">▶️</div>
+        <div class="social-name">YouTube</div>
+        <div class="social-handle">S.R.K Studio</div>
+        <span class="social-followers">10K+</span>
+      </a>
+      <a href="#" class="social-card" style="background:linear-gradient(135deg,#334155,#1e293b);">
+        <div class="social-icon">🐦</div>
+        <div class="social-name">X / Twitter</div>
+        <div class="social-handle">@srkstudio</div>
+        <span class="social-followers">5K+</span>
+      </a>
+      <a href="#" class="social-card" style="background:linear-gradient(135deg,#0077b5,#005885);">
+        <div class="social-icon">💼</div>
+        <div class="social-name">LinkedIn</div>
+        <div class="social-handle">S.R.K Studio</div>
+        <span class="social-followers">3K+</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq-section">
+    <div class="section-head">
+      <div class="section-label text-burgundy">Frequently Asked</div>
+      <h2 class="section-title text-grad-burgundy">Questions &amp; Answers</h2>
+      <div class="gold-divider" style="width:8rem;margin:1rem auto 1.5rem;"></div>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item open">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Kya aap Bihar ke bahar bhi shoot karte hain?
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">Bilkul! Hum poore India mein wedding shoots karte hain — Bihar, Jharkhand, UP, Delhi, Mumbai, Bangalore. Travel &amp; stay charges actual basis pe additional honge.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Booking confirm karne ke liye kitna advance dena padega?
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">Date confirm karne ke liye total package ka 30% advance lagta hai (online ya cash). Baki amount delivery se pehle. UPI: 9110066743@ybl (Meena Devi — PhonePe).</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Kitne din mein photos aur video deliver karte ho?
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">Highlight reel: 7 din. Edited photos (200-500): 15-20 din. Cinematic film + full album: 30 din maximum. Sab cloud aur pen drive mein milta hai.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Kya raw footage milti hai?
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">Haan, sab raw photos pen drive mein delivered hote hain. Edited high-quality versions Google Drive pe bhi share karte hain — lifetime access.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Drone shots aur cinematic video sab packages mein available hai?
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">Drone shots A+, A, B, C packages mein included hain. Cinematic film sab packages mein hai. Custom requirements ke liye baat kar sakte hain.</div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)">
+          Pre-wedding aur engagement shoots karte ho?
+          <span class="faq-arrow">▼</span>
+        </div>
+        <div class="faq-a">Bilkul! Pre-wedding, engagement, haldi, mehendi, sangeet — sab functions cover karte hain. Standalone pre-wedding shoot Rs 25,000 se shuru.</div>
+      </div>
+    </div>
+  </section>
+
+</div><!-- end home -->
+
+
+<!-- ============================================================ -->
+<!-- BOOK NOW PAGE -->
+<!-- ============================================================ -->
+<div id="page-booknow" class="page">
+  <div class="book-hero">
+    <div class="hero-badge" style="position:relative;z-index:1;">S.R.K STUDIO — SAHARSA, BIHAR</div>
+    <h1>Book Your Wedding</h1>
+    <p>Fill the form below and we'll confirm your booking within 24 hours</p>
+  </div>
+  <div class="trust-bar">
+    <div class="trust-bar-inner">
+      <span class="trust-item">✅ 500+ Weddings Covered</span>
+      <span class="trust-item">✅ 10+ Years Experience</span>
+      <span class="trust-item">✅ Bihar's Most Trusted</span>
+      <span class="trust-item">✅ Free Quote in 1 Hour</span>
+    </div>
+  </div>
+
+  <div class="book-layout">
+    <!-- Sidebar -->
+    <div style="display:flex;flex-direction:column;gap:1rem;">
+      <div class="contact-card">
+        <div class="contact-card-title">💬 Direct Contact</div>
+        <a href="https://wa.me/919110066743" target="_top" class="contact-link whatsapp">
+          <div class="contact-link-icon">💬</div>
+          <div>
+            <div class="contact-link-label">WhatsApp</div>
+            <div class="contact-link-val">9110066743</div>
+          </div>
+        </a>
+        <a href="https://t.me/+919110066743" target="_top" class="contact-link telegram">
+          <div class="contact-link-icon">✈️</div>
+          <div>
+            <div class="contact-link-label">Telegram</div>
+            <div class="contact-link-val">9110066743</div>
+          </div>
+        </a>
+        <a href="tel:9110066743" class="contact-link call">
+          <div class="contact-link-icon">📞</div>
+          <div>
+            <div class="contact-link-label">Direct Call</div>
+            <div class="contact-link-val">9110066743</div>
+          </div>
+        </a>
+        <div class="contact-info" style="margin-top:0.25rem;">
+          <div style="font-size:1.25rem;">📍</div>
+          <div>
+            <div style="font-size:0.65rem;text-transform:uppercase;letter-spacing:0.2em;color:#fda4af;">Studio</div>
+            <div style="font-size:0.875rem;margin-top:0.2rem;">Yadav Chowk, Dumrail<br/>Saharsa, Bihar 852201</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="booking-note">
+        <strong>📌 Booking Note</strong>
+        <p>Advance payment required to confirm your booking date. We'll contact you within 1-2 hours after form submission.</p>
+      </div>
+
+      <!-- UPI Payment Card -->
+      <div class="upi-card">
+        <div class="upi-title">💳 Digital Payment — UPI</div>
+        <div class="upi-qr">
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=160x160&data=upi%3A%2F%2Fpay%3Fpa%3D9110066743%40ybl%26pn%3DMeena%2BDevi%26tn%3DSRK%2BStudio%2BBooking" alt="UPI QR Code" />
+        </div>
+        <div class="upi-id-box">
+          <div class="upi-id-label">PhonePe UPI ID</div>
+          <div class="upi-id-val">9110066743@ybl</div>
+        </div>
+        <div class="upi-name-box">
+          <div class="upi-name-label">Account Name</div>
+          <div class="upi-name-val">Meena Devi</div>
+        </div>
+        <div class="upi-note">📱 PhonePe / GPay / Paytm — kisi bhi UPI app se scan karke pay karein</div>
+      </div>
+    </div>
+
+    <!-- Booking Form -->
+    <div class="form-card">
+      <!-- Success Screen -->
+      <div class="success-screen" id="success-screen">
+        <div class="success-icon">🎉</div>
+        <div class="success-title">Booking Ready!</div>
+        <p class="success-desc">Neeche <strong>WhatsApp ya Telegram</strong> pe click karo — poori booking details automatically jayegi!</p>
+        <div class="send-btns">
+          <a id="wa-link" href="#" target="_top" class="send-wa">💬 WhatsApp pe Bhejo</a>
+          <a id="tg-link" href="https://t.me/+919110066743" target="_top" class="send-tg" onclick="copyBookingMsg()">✈️ Telegram pe Bhejo</a>
+        </div>
+        <div class="send-tip">
+          💡 <strong>WhatsApp:</strong> Click karo → app khulega → bas Send dabao!<br/>
+          💡 <strong>Telegram:</strong> Message copy hoga → Telegram mein Paste karke Send karo
+        </div>
+        <!-- UPI on success -->
+        <div class="success-upi">
+          <div class="success-upi-title">💳 Advance Payment (UPI)</div>
+          <img src="https://api.qrserver.com/v1/create-qr-code/?size=130x130&data=upi%3A%2F%2Fpay%3Fpa%3D9110066743%40ybl%26pn%3DMeena%2BDevi%26tn%3DSRK%2BStudio%2BBooking" alt="UPI QR" />
+          <div class="upi-id" style="margin-top:0.25rem;">9110066743@ybl</div>
+          <div class="upi-person">Meena Devi · PhonePe</div>
+          <div class="upi-apps">GPay / Paytm / kisi bhi UPI app se scan karein</div>
+        </div>
+        <a href="tel:+919110066743" style="display:flex;align-items:center;gap:0.5rem;background:#FACC15;color:#7B1C3A;font-weight:700;padding:0.75rem 1.5rem;border-radius:9999px;">📞 Call: 9110066743</a>
+        <button class="back-btn" onclick="hideSuccess()">← Wapas Form pe Jao</button>
+      </div>
+
+      <!-- Form -->
+      <div id="booking-form-wrap">
+        <div class="form-header">
+          <div class="form-header-icon">📷</div>
+          <div>
+            <div class="form-header-title">Comprehensive Booking Form</div>
+            <div class="form-header-sub">Fill all details — we'll get back within 1-2 hours</div>
+          </div>
+        </div>
+
+        <form id="booking-form" onsubmit="submitBooking(event)">
+          <!-- Step 1 -->
+          <div class="form-section">
+            <div class="form-step-header">
+              <div class="step-num">1</div>
+              <div class="step-title">Applicant Details</div>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">Your Full Name *</label>
+                <input type="text" class="form-input" id="f-name" placeholder="Enter your name" required />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Your Phone Number *</label>
+                <input type="tel" class="form-input" id="f-phone" placeholder="+91 XXXXXXXXXX" required />
+              </div>
+              <div class="form-group full">
+                <label class="form-label">Email Address (Optional)</label>
+                <input type="email" class="form-input" id="f-email" placeholder="you@example.com" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="form-section">
+            <div class="form-step-header">
+              <div class="step-num">2</div>
+              <div class="step-title">Couple Details</div>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">🤵 Groom Name</label>
+                <input type="text" class="form-input" id="f-groom" placeholder="Groom's full name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">👰 Bride Name</label>
+                <input type="text" class="form-input" id="f-bride" placeholder="Bride's full name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Groom Phone</label>
+                <input type="tel" class="form-input" id="f-groom-ph" placeholder="Groom's number" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Bride Phone</label>
+                <input type="tel" class="form-input" id="f-bride-ph" placeholder="Bride's number" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="form-section">
+            <div class="form-step-header">
+              <div class="step-num">3</div>
+              <div class="step-title">Event Location &amp; Date</div>
+            </div>
+            <div class="form-grid">
+              <div class="form-group">
+                <label class="form-label">Venue / Marriage Hall Name</label>
+                <input type="text" class="form-input" id="f-venue" placeholder="Venue name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">City / Village</label>
+                <input type="text" class="form-input" id="f-city" placeholder="City or village name" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">District</label>
+                <input type="text" class="form-input" id="f-district" placeholder="District" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">State</label>
+                <input type="text" class="form-input" id="f-state" placeholder="State" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Pincode</label>
+                <input type="text" class="form-input" id="f-pin" placeholder="852201" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Number of Days</label>
+                <input type="number" min="1" class="form-input" id="f-days" placeholder="1, 2, 3..." />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Wedding Start Date</label>
+                <input type="date" class="form-input" id="f-start" />
+              </div>
+              <div class="form-group">
+                <label class="form-label">Wedding End Date</label>
+                <input type="date" class="form-input" id="f-end" />
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 4 -->
+          <div class="form-section">
+            <div class="form-step-header">
+              <div class="step-num">4</div>
+              <div class="step-title">Package Selection</div>
+            </div>
+            <div style="padding-left:2.75rem;">
+              <select class="form-select" id="f-package">
+                <option value="">Select your camera package</option>
+                <option value="A+ Category — Rs 50,000 to Rs 1,00,000">A+ Category — Rs 50,000 to Rs 1,00,000</option>
+                <option value="A Category — Rs 35,000 to Rs 85,000">A Category — Rs 35,000 to Rs 85,000</option>
+                <option value="B Category — Rs 30,000 to Rs 60,000">B Category — Rs 30,000 to Rs 60,000</option>
+                <option value="C Category — Rs 27,000 to Rs 45,000">C Category — Rs 27,000 to Rs 45,000</option>
+                <option value="D Category — Rs 23,000 to Rs 35,000">D Category — Rs 23,000 to Rs 35,000</option>
+                <option value="E Category — Rs 18,000 to Rs 25,000">E Category — Rs 18,000 to Rs 25,000</option>
+                <option value="F Category — Custom Package">F Category — Custom Package</option>
+              </select>
+            </div>
+          </div>
+
+          <button type="submit" class="submit-btn">✅ Book Now — WhatsApp / Telegram</button>
+          <p class="submit-note">✅ Submit karte hi WhatsApp aur Telegram dono ka option milega — apni marzi se bhejo</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</div><!-- end booknow -->
+
+
+<!-- ============================================================ -->
+<!-- REAL WEDDING PAGE -->
+<!-- ============================================================ -->
+<div id="page-realwedding" class="page">
+  <div class="book-hero">
+    <div class="hero-badge" style="position:relative;z-index:1;">Portfolio Gallery</div>
+    <h1>Real Weddings</h1>
+    <p>A showcase of love, beauty &amp; cinematic excellence — captured across all our packages.</p>
+  </div>
+
+  <div class="rw-filter-bar">
+    <div class="rw-filters">
+      <button class="filter-btn active" onclick="rwFilter('all',this)">All Categories</button>
+      <button class="filter-btn" onclick="rwFilter('aplus',this)">A+ Category</button>
+      <button class="filter-btn" onclick="rwFilter('a',this)">A Category</button>
+      <button class="filter-btn" onclick="rwFilter('b',this)">B Category</button>
+      <button class="filter-btn" onclick="rwFilter('c',this)">C Category</button>
+      <button class="filter-btn" onclick="rwFilter('d',this)">D Category</button>
+      <button class="filter-btn" onclick="rwFilter('e',this)">E Category</button>
+    </div>
+  </div>
+
+  <div class="gallery-section">
+    <div id="gallery-aplus" class="gallery-cat">
+      <div class="gallery-cat-header">
+        <div>
+          <div class="stars">★★★★★</div>
+          <h2 class="gallery-cat-name">A+ Category — Cinematic Excellence</h2>
+          <p class="gallery-cat-desc">Cinematic photo and videography with RED Cinema Camera, ARRI Alexa Mini + DJI Inspire 2. Best for grand weddings.</p>
+          <span class="cameras-tag">📷 RED Cinema Camera, ARRI Alexa Mini, Sony FX9</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem;flex-shrink:0;">
+          <span class="gallery-cat-price">Rs 50,000 – Rs 1,00,000</span>
+          <a href="#" onclick="showPage('booknow')" style="border:2px solid #7B1C3A;color:#7B1C3A;padding:0.4rem 1rem;border-radius:9999px;font-size:0.8rem;font-weight:700;">Book</a>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-img"><img src="images/aplus-1.png" alt="A+ Wedding 1" onerror="this.src='images/hero.png'" /></div>
+        <div class="gallery-img"><img src="images/gallery-1.png" alt="A+ Wedding 2" onerror="this.src='images/hero.png'" /></div>
+        <div class="gallery-img"><img src="images/gallery-2.png" alt="A+ Wedding 3" onerror="this.src='images/hero.png'" /></div>
+      </div>
+    </div>
+
+    <div id="gallery-a" class="gallery-cat">
+      <div class="gallery-cat-header">
+        <div>
+          <div class="stars">★★★★★</div>
+          <h2 class="gallery-cat-name">A Category — Filmy Experience</h2>
+          <p class="gallery-cat-desc">Filmy-style photo and videography with Sony A7R V, Canon EOS R5 + DJI Mavic 3 Pro. Cinematic storytelling for your wedding.</p>
+          <span class="cameras-tag">📷 Sony A7R V, Canon EOS R5, Nikon Z9</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem;flex-shrink:0;">
+          <span class="gallery-cat-price">Rs 35,000 – Rs 85,000</span>
+          <a href="#" onclick="showPage('booknow')" style="border:2px solid #7B1C3A;color:#7B1C3A;padding:0.4rem 1rem;border-radius:9999px;font-size:0.8rem;font-weight:700;">Book</a>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-img"><img src="images/a-1.png" alt="A Wedding" onerror="this.src='images/hero.png'" /></div>
+        <div class="gallery-img"><img src="images/gallery-1.png" alt="A Wedding 2" onerror="this.src='images/hero.png'" /></div>
+        <div class="gallery-img"><img src="images/gallery-2.png" alt="A Wedding 3" onerror="this.src='images/hero.png'" /></div>
+      </div>
+    </div>
+
+    <div id="gallery-b" class="gallery-cat">
+      <div class="gallery-cat-header">
+        <div>
+          <div class="stars">★★★★★</div>
+          <h2 class="gallery-cat-name">B Category — High Quality</h2>
+          <p class="gallery-cat-desc">High quality photo and videography with Sony A7 IV, Canon EOS R6 Mark II. Professional cameras, outstanding results.</p>
+          <span class="cameras-tag">📷 Sony A7 IV, Canon EOS R6 Mark II, Nikon Z8</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem;flex-shrink:0;">
+          <span class="gallery-cat-price">Rs 30,000 – Rs 60,000</span>
+          <a href="#" onclick="showPage('booknow')" style="border:2px solid #7B1C3A;color:#7B1C3A;padding:0.4rem 1rem;border-radius:9999px;font-size:0.8rem;font-weight:700;">Book</a>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-img"><img src="images/b-1.png" alt="B Wedding" onerror="this.src='images/hero.png'" /></div>
+        <div class="gallery-img"><img src="images/gallery-1.png" alt="B Wedding 2" onerror="this.src='images/hero.png'" /></div>
+        <div class="gallery-img"><img src="images/gallery-2.png" alt="B Wedding 3" onerror="this.src='images/hero.png'" /></div>
+      </div>
+    </div>
+
+    <div id="gallery-c" class="gallery-cat">
+      <div class="gallery-cat-header">
+        <div>
+          <div class="stars">★★★★★</div>
+          <h2 class="gallery-cat-name">C Category — 4K Excellence</h2>
+          <p class="gallery-cat-desc">4K photo and videography with Canon EOS R50, Sony ZV-E1. Crystal clear resolution.</p>
+          <span class="cameras-tag">📷 Canon EOS R50, Sony ZV-E1, Panasonic Lumix G9 II</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem;flex-shrink:0;">
+          <span class="gallery-cat-price">Rs 27,000 – Rs 45,000</span>
+          <a href="#" onclick="showPage('booknow')" style="border:2px solid #7B1C3A;color:#7B1C3A;padding:0.4rem 1rem;border-radius:9999px;font-size:0.8rem;font-weight:700;">Book</a>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-img"><img src="images/c-1.png" alt="C Wedding" onerror="this.src='images/hero.png'" /></div>
+        <div class="gallery-img"><img src="images/gallery-1.png" alt="C Wedding 2" onerror="this.src='images/hero.png'" /></div>
+        <div class="gallery-img"><img src="images/gallery-2.png" alt="C Wedding 3" onerror="this.src='images/hero.png'" /></div>
+      </div>
+    </div>
+
+    <div id="gallery-d" class="gallery-cat">
+      <div class="gallery-cat-header">
+        <div>
+          <div class="stars">★★★★★</div>
+          <h2 class="gallery-cat-name">D Category — Professional Value</h2>
+          <p class="gallery-cat-desc">Professional photo and videography at great value with Sony Alpha a6700, Canon EOS 90D.</p>
+          <span class="cameras-tag">📷 Sony Alpha a6700, Canon EOS 90D, Nikon D780</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem;flex-shrink:0;">
+          <span class="gallery-cat-price">Rs 23,000 – Rs 35,000</span>
+          <a href="#" onclick="showPage('booknow')" style="border:2px solid #7B1C3A;color:#7B1C3A;padding:0.4rem 1rem;border-radius:9999px;font-size:0.8rem;font-weight:700;">Book</a>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-img"><img src="images/d-1.png" alt="D Wedding" onerror="this.src='images/hero.png'" /></div>
+        <div class="gallery-img"><img src="images/gallery-1.png" alt="D Wedding 2" onerror="this.src='images/hero.png'" /></div>
+        <div class="gallery-img"><img src="images/gallery-2.png" alt="D Wedding 3" onerror="this.src='images/hero.png'" /></div>
+      </div>
+    </div>
+
+    <div id="gallery-e" class="gallery-cat">
+      <div class="gallery-cat-header">
+        <div>
+          <div class="stars">★★★★★</div>
+          <h2 class="gallery-cat-name">E Category — Essential Package</h2>
+          <p class="gallery-cat-desc">Essential photo and videography with Canon EOS M50 Mark II, Sony Alpha a6400. Perfect for intimate weddings.</p>
+          <span class="cameras-tag">📷 Canon EOS M50 Mark II, Sony Alpha a6400</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:1rem;flex-shrink:0;">
+          <span class="gallery-cat-price">Rs 18,000 – Rs 25,000</span>
+          <a href="#" onclick="showPage('booknow')" style="border:2px solid #7B1C3A;color:#7B1C3A;padding:0.4rem 1rem;border-radius:9999px;font-size:0.8rem;font-weight:700;">Book</a>
+        </div>
+      </div>
+      <div class="gallery-grid">
+        <div class="gallery-img"><img src="images/e-1.png" alt="E Wedding" onerror="this.src='images/hero.png'" /></div>
+        <div class="gallery-img"><img src="images/gallery-1.png" alt="E Wedding 2" onerror="this.src='images/hero.png'" /></div>
+        <div class="gallery-img"><img src="images/gallery-2.png" alt="E Wedding 3" onerror="this.src='images/hero.png'" /></div>
+      </div>
+    </div>
+  </div>
+</div><!-- end realwedding -->
+
+
+<!-- ============================================================ -->
+<!-- WEDDING VENDOR PAGE -->
+<!-- ============================================================ -->
+<div id="page-vendor" class="page">
+  <div class="vendor-hero">
+    <div class="vendor-hero-bg">
+      <img src="images/vendor-hero.png" alt="Wedding Vendors" onerror="this.src='images/hero.png'" />
+      <div class="vendor-hero-overlay"></div>
+    </div>
+    <div class="vendor-hero-content">
+      <div class="hero-badge">Bihar's Best Wedding Services</div>
+      <h1 style="font-family:var(--font-display);font-size:clamp(2.5rem,6vw,4.5rem);color:#fff;font-weight:900;margin-top:1rem;">Wedding Vendors</h1>
+      <p style="color:#fecdd3;font-size:1.1rem;margin-top:1rem;max-width:35rem;margin-left:auto;margin-right:auto;">Complete wedding solutions — photography, venues, decor, makeup, catering &amp; more under one roof</p>
+    </div>
+  </div>
+
+  <div class="vendor-grid">
+    <!-- S.R.K Studio — Featured -->
+    <div class="vendor-card featured">
+      <div class="vendor-img-wrap">
+        <img src="images/hero.png" alt="S.R.K Studio" />
+        <div class="vendor-featured-badge">⭐ Featured Partner</div>
+        <div class="vendor-type-badge">📷 Photography</div>
+      </div>
+      <div class="vendor-body">
+        <h3 class="vendor-name">S.R.K Studio</h3>
+        <div class="vendor-loc">📍 Dumrail, Saharsa, Bihar</div>
+        <div class="vendor-rating">★★★★★</div>
+        <p class="vendor-desc">World-class wedding photography &amp; videography. 7 camera packages from budget to luxury. Bihar's most trusted studio.</p>
+        <div class="vendor-services">
+          <span class="vendor-tag">Cinematic Video</span>
+          <span class="vendor-tag">DSLR Photography</span>
+          <span class="vendor-tag">Drone Shots</span>
+          <span class="vendor-tag">Same-Day Edit</span>
+          <span class="vendor-tag">Photo Album</span>
+          <span class="vendor-tag">Digital Delivery</span>
+        </div>
+        <div class="vendor-footer">
+          <span class="vendor-price">Rs 18,000 – Rs 1,00,000</span>
+          <a href="https://wa.me/919110066743" target="_top" class="vendor-contact">💬 Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Venue -->
+    <div class="vendor-card">
+      <div class="vendor-img-wrap">
+        <img src="images/gallery-1.png" alt="Royal Garden Palace" onerror="this.src='images/hero.png'" />
+        <div class="vendor-type-badge">🏰 Wedding Venue</div>
+      </div>
+      <div class="vendor-body">
+        <h3 class="vendor-name">Royal Garden Palace</h3>
+        <div class="vendor-loc">📍 Patna, Bihar</div>
+        <div class="vendor-rating">★★★★★</div>
+        <p class="vendor-desc">Grand wedding venues for all budgets. Capacity from 100 to 2000 guests. Beautiful mandap setup included.</p>
+        <div class="vendor-services">
+          <span class="vendor-tag">Indoor Hall</span>
+          <span class="vendor-tag">Outdoor Lawn</span>
+          <span class="vendor-tag">AC Banquet</span>
+          <span class="vendor-tag">Parking</span>
+          <span class="vendor-tag">Stage Setup</span>
+        </div>
+        <div class="vendor-footer">
+          <span class="vendor-price">Contact for pricing</span>
+          <a href="tel:9110066743" class="vendor-contact">📞 Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Decor -->
+    <div class="vendor-card">
+      <div class="vendor-img-wrap">
+        <img src="images/gallery-2.png" alt="Bloom Wedding Decor" onerror="this.src='images/hero.png'" />
+        <div class="vendor-type-badge">🌸 Floral Decoration</div>
+      </div>
+      <div class="vendor-body">
+        <h3 class="vendor-name">Bloom Wedding Decor</h3>
+        <div class="vendor-loc">📍 Saharsa, Bihar</div>
+        <div class="vendor-rating">★★★★★</div>
+        <p class="vendor-desc">Exquisite floral arrangements for every wedding style — traditional, modern, and royal themes.</p>
+        <div class="vendor-services">
+          <span class="vendor-tag">Mandap Decoration</span>
+          <span class="vendor-tag">Stage Flowers</span>
+          <span class="vendor-tag">Car Decoration</span>
+          <span class="vendor-tag">Entrance Arch</span>
+        </div>
+        <div class="vendor-footer">
+          <span class="vendor-price">Contact for pricing</span>
+          <a href="tel:9110066743" class="vendor-contact">📞 Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Makeup -->
+    <div class="vendor-card">
+      <div class="vendor-img-wrap">
+        <img src="images/a-1.png" alt="Glamour Glow Studio" onerror="this.src='images/hero.png'" />
+        <div class="vendor-type-badge">💄 Bridal Makeup</div>
+      </div>
+      <div class="vendor-body">
+        <h3 class="vendor-name">Glamour Glow Studio</h3>
+        <div class="vendor-loc">📍 Saharsa, Bihar</div>
+        <div class="vendor-rating">★★★★★</div>
+        <p class="vendor-desc">Complete bridal beauty services from mehndi to final look. Traditional and modern styles available.</p>
+        <div class="vendor-services">
+          <span class="vendor-tag">Bridal Makeup</span>
+          <span class="vendor-tag">Hair Styling</span>
+          <span class="vendor-tag">Saree Draping</span>
+          <span class="vendor-tag">Mehndi Design</span>
+        </div>
+        <div class="vendor-footer">
+          <span class="vendor-price">Contact for pricing</span>
+          <a href="tel:9110066743" class="vendor-contact">📞 Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Catering -->
+    <div class="vendor-card">
+      <div class="vendor-img-wrap">
+        <img src="images/b-1.png" alt="Royal Feast Caterers" onerror="this.src='images/hero.png'" />
+        <div class="vendor-type-badge">🍽️ Catering</div>
+      </div>
+      <div class="vendor-body">
+        <h3 class="vendor-name">Royal Feast Caterers</h3>
+        <div class="vendor-loc">📍 Saharsa, Bihar</div>
+        <div class="vendor-rating">★★★★★</div>
+        <p class="vendor-desc">Authentic Bihari and North Indian wedding cuisine. Live counters, buffet, and full-service catering.</p>
+        <div class="vendor-services">
+          <span class="vendor-tag">Full Wedding Menu</span>
+          <span class="vendor-tag">Live Counter</span>
+          <span class="vendor-tag">Bihari Cuisine</span>
+          <span class="vendor-tag">Sweet Stall</span>
+        </div>
+        <div class="vendor-footer">
+          <span class="vendor-price">Contact for pricing</span>
+          <a href="tel:9110066743" class="vendor-contact">📞 Contact</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- DJ -->
+    <div class="vendor-card">
+      <div class="vendor-img-wrap">
+        <img src="images/c-1.png" alt="Beat Masters DJ" onerror="this.src='images/hero.png'" />
+        <div class="vendor-type-badge">🎵 DJ &amp; Sound</div>
+      </div>
+      <div class="vendor-body">
+        <h3 class="vendor-name">Beat Masters DJ</h3>
+        <div class="vendor-loc">📍 Saharsa, Bihar</div>
+        <div class="vendor-rating">★★★★★</div>
+        <p class="vendor-desc">Professional DJ services with top sound systems and lighting effects for the perfect wedding atmosphere.</p>
+        <div class="vendor-services">
+          <span class="vendor-tag">DJ + Lighting</span>
+          <span class="vendor-tag">Sound System</span>
+          <span class="vendor-tag">LED Dance Floor</span>
+          <span class="vendor-tag">Fog Machine</span>
+        </div>
+        <div class="vendor-footer">
+          <span class="vendor-price">Contact for pricing</span>
+          <a href="tel:9110066743" class="vendor-contact">📞 Contact</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div><!-- end vendor -->
+
+
+<!-- ============================================================ -->
+<!-- THEME SONG + FOOTER (shown on all pages) -->
+<!-- ============================================================ -->
+<div id="common-footer">
+  <!-- Theme Song -->
+  <section class="song-section">
+    <div class="song-badge">♪ Studio Theme ♪</div>
+    <h2 class="song-title">Our <span class="text-grad-gold" style="font-style:italic;">Signature</span> Song</h2>
+    <p class="song-sub">Feel the cinematic vibe of S.R.K Studio</p>
+    <div class="video-player-wrap">
+      <video controls preload="metadata" playsinline poster="images/hero.png">
+        <source src="media/srk-song.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+      <div class="video-credit">🎬 S.R.K Studio Original</div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-grid">
+      <!-- Brand -->
+      <div>
+        <div class="footer-logo-wrap">
+          <img src="images/srk-logo.jpeg" alt="S.R.K Studio Logo" class="footer-logo" onerror="this.style.display='none'" />
+          <div>
+            <div class="footer-brand">S.R.K Studio</div>
+            <div class="footer-brand-sub">Cinematic Wedding Films</div>
+          </div>
+        </div>
+        <p class="footer-about">
+          Premium wedding photography &amp; cinematic videography by
+          <strong>CEO Sharvan Yadav</strong>. Capturing your timeless moments with world-class artistry across Bihar and beyond.
+        </p>
+        <div class="footer-socials">
+          <a href="#" class="footer-social-btn" style="background:linear-gradient(135deg,#e1306c,#c13584);">📸</a>
+          <a href="#" class="footer-social-btn" style="background:linear-gradient(135deg,#1877f2,#0d5ac1);">👤</a>
+          <a href="#" class="footer-social-btn" style="background:linear-gradient(135deg,#ff0000,#c00);">▶️</a>
+          <a href="#" class="footer-social-btn" style="background:linear-gradient(135deg,#334155,#1e293b);">🐦</a>
+          <a href="#" class="footer-social-btn" style="background:linear-gradient(135deg,#0077b5,#005885);">💼</a>
+        </div>
+      </div>
+
+      <!-- Quick Links -->
+      <div>
+        <div class="footer-col-title">Quick Links</div>
+        <ul class="footer-links">
+          <li><a href="#" onclick="showPage('home')">Home</a></li>
+          <li><a href="#" onclick="showPage('vendor')">Wedding Vendor</a></li>
+          <li><a href="#" onclick="showPage('realwedding')">Real Wedding</a></li>
+          <li><a href="#" onclick="showPage('booknow')">Book Now</a></li>
+        </ul>
+      </div>
+
+      <!-- Services -->
+      <div>
+        <div class="footer-col-title">Our Services</div>
+        <ul class="footer-services">
+          <li>Wedding Photography</li>
+          <li>Cinematic Videography</li>
+          <li>Drone Aerial Shots</li>
+          <li>Pre-Wedding Shoots</li>
+          <li>Engagement Films</li>
+          <li>Premium Albums</li>
+        </ul>
+      </div>
+
+      <!-- Contact -->
+      <div>
+        <div class="footer-col-title">Reach Us</div>
+        <div class="footer-contact">
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📞</span>
+            <div>
+              <div class="footer-contact-main">9110066743</div>
+              <div class="footer-contact-sub">Call / WhatsApp / Telegram</div>
+            </div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📧</span>
+            <div class="footer-contact-text">srkstudio@gmail.com</div>
+          </div>
+          <div class="footer-contact-item">
+            <span class="footer-contact-icon">📍</span>
+            <div class="footer-contact-text">Yadav Chowk, Dumrail<br/>Saharsa, Bihar — 852201</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="footer-bottom-title text-grad-gold">Thank You for Visiting</div>
+      <div class="gold-divider" style="width:8rem;margin:0.75rem auto;"></div>
+      <p class="footer-bottom-quote">"Every wedding is a story. We are honoured to film yours."</p>
+      <div class="footer-copy">
+        <p>© <span id="yr"></span> <strong>S.R.K Studio</strong>. All rights reserved.</p>
+        <p style="text-transform:uppercase;letter-spacing:0.1em;">Designed for Sharvan Yadav • Bihar, India</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Developer Credit -->
+  <div class="dev-credit">
+    <div class="dev-name">S.R.K Studio</div>
+    <p class="dev-sub">Cinematic Photo &amp; Videography</p>
+    <div>
+      <a href="https://t.me/7254017992" target="_blank" class="dev-link">📲 Contact on Telegram: 7254017992</a>
+    </div>
+    <p class="dev-info">Website Developer <b>Krishna Yadav</b></p>
+    <hr class="dev-divider" />
+    <p class="dev-copy">© <span id="yr2"></span> S.R.K Studio | All Rights Reserved</p>
+  </div>
+</div>
+
+<!-- FLOATING CONTACT -->
+<div class="floating-contact">
+  <a href="https://wa.me/919110066743" target="_top" class="fab fab-wa" title="WhatsApp">💬 <span class="fab-label">WhatsApp</span></a>
+  <a href="https://t.me/+919110066743" target="_top" class="fab fab-tg" title="Telegram">✈️ <span class="fab-label">Telegram</span></a>
+  <a href="tel:+919110066743" class="fab fab-call" title="Call">📞 <span class="fab-label">Call Now</span></a>
+</div>
+
+<!-- ============================================================ -->
+<!-- JAVASCRIPT -->
+<!-- ============================================================ -->
+<script>
+  // Year
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.getElementById('yr2').textContent = new Date().getFullYear();
+
+  // Scroll progress bar
+  window.addEventListener('scroll', () => {
+    const total = document.body.scrollHeight - window.innerHeight;
+    const pct = total > 0 ? (window.scrollY / total) * 100 : 0;
+    document.getElementById('progress-bar').style.width = pct + '%';
+  });
+
+  // Navigation
+  function showPage(page) {
+    // Hide all
+    document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+    // Show target
+    document.getElementById('page-' + page).classList.add('active');
+    // Update nav active state
+    document.querySelectorAll('.nav-link').forEach(l => l.classList.remove('active'));
+    const navEl = document.getElementById('nav-' + page);
+    if (navEl && !navEl.classList.contains('highlight')) navEl.classList.add('active');
+    // Scroll top
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+    return false;
+  }
+
+  function toggleMobile() {
+    document.getElementById('mobile-nav').classList.toggle('open');
+  }
+  function closeMobile() {
+    document.getElementById('mobile-nav').classList.remove('open');
+  }
+
+  // FAQ toggle
+  function toggleFaq(el) {
+    const item = el.parentElement;
+    item.classList.toggle('open');
+  }
+
+  // Real Wedding filter
+  function rwFilter(cat, btn) {
+    // Update button styles
+    document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    // Show/hide galleries
+    const allCats = ['aplus','a','b','c','d','e'];
+    allCats.forEach(id => {
+      const el = document.getElementById('gallery-' + id);
+      if (el) el.style.display = (cat === 'all' || cat === id) ? 'block' : 'none';
+    });
+  }
+
+  // Booking form
+  function buildMsg() {
+    const name    = document.getElementById('f-name').value || 'N/A';
+    const phone   = document.getElementById('f-phone').value || 'N/A';
+    const email   = document.getElementById('f-email').value || 'N/A';
+    const groom   = document.getElementById('f-groom').value || 'N/A';
+    const bride   = document.getElementById('f-bride').value || 'N/A';
+    const groomPh = document.getElementById('f-groom-ph').value || 'N/A';
+    const bridePh = document.getElementById('f-bride-ph').value || 'N/A';
+    const venue   = document.getElementById('f-venue').value || 'N/A';
+    const city    = document.getElementById('f-city').value || 'N/A';
+    const dist    = document.getElementById('f-district').value || 'N/A';
+    const state   = document.getElementById('f-state').value || 'N/A';
+    const pin     = document.getElementById('f-pin').value || 'N/A';
+    const days    = document.getElementById('f-days').value || 'N/A';
+    const start   = document.getElementById('f-start').value || 'Not selected';
+    const end     = document.getElementById('f-end').value || 'Not selected';
+    const pkg     = document.getElementById('f-package').value || 'Not selected';
+
+    return [
+      '🎉 *NEW BOOKING REQUEST — S.R.K Studio*',
+      '',
+      '👤 *Applicant Details*',
+      'Name: ' + name,
+      'Phone: ' + phone,
+      'Email: ' + email,
+      '',
+      '💑 *Couple Details*',
+      'Groom: ' + groom + '  |  Phone: ' + groomPh,
+      'Bride:  ' + bride + '  |  Phone: ' + bridePh,
+      '',
+      '📍 *Event Location*',
+      'Venue: ' + venue,
+      'City/Village: ' + city,
+      'District: ' + dist + '  |  State: ' + state,
+      'Pincode: ' + pin,
+      'No. of Days: ' + days,
+      '',
+      '📅 *Dates*',
+      'Start: ' + start,
+      'End:   ' + end,
+      '',
+      '📦 *Package Selected*',
+      pkg,
+      '',
+      '---',
+      'Sent via S.R.K Studio — srkstudio.replit.app'
+    ].join('\n');
+  }
+
+  function submitBooking(e) {
+    e.preventDefault();
+    const msg = buildMsg();
+    const encoded = encodeURIComponent(msg);
+    document.getElementById('wa-link').href = 'https://wa.me/919110066743?text=' + encoded;
+    document.getElementById('booking-form-wrap').style.display = 'none';
+    document.getElementById('success-screen').classList.add('show');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  function hideSuccess() {
+    document.getElementById('success-screen').classList.remove('show');
+    document.getElementById('booking-form-wrap').style.display = 'block';
+  }
+
+  function copyBookingMsg() {
+    try {
+      navigator.clipboard.writeText(buildMsg());
+    } catch(e) {}
+  }
+</script>
+</body>
+</html>
