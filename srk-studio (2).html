@@ -1,0 +1,3565 @@
+!doctype html>l
+<html lang="en">
+  <head>
+    Sr
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>S.R.K Studio - Premium Wedding Photography & Videography</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700;900&family=Inter:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+
+      :root {
+        --primary: #7a0021;
+        --primary-light: #9a0028;
+        --gold: #e6a817;
+        --gold-light: #f5c842;
+        --cream: #fdf8f2;
+        --text: #2a0a10;
+        --muted: #8a6060;
+        --card-bg: #faf5ee;
+        --border: #e8d5c0;
+        --green: #16a34a;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        font-family: "Inter", sans-serif;
+        background: var(--cream);
+        color: var(--text);
+        overflow-x: hidden;
+      }
+
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-family: "Playfair Display", serif;
+      }
+
+      /* ====== WELCOME SPLASH ====== */
+      #splash {
+        position: fixed;
+        inset: 0;
+        z-index: 9999;
+        background: var(--primary);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+        transition:
+          opacity 0.8s ease,
+          visibility 0.8s ease;
+      }
+      #splash.hide {
+        opacity: 0;
+        visibility: hidden;
+      }
+
+      .rays {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .ray {
+        position: absolute;
+        width: 1px;
+        height: 100%;
+        background: linear-gradient(
+          to bottom,
+          transparent,
+          rgba(230, 168, 23, 0.25),
+          transparent
+        );
+        transform-origin: center;
+      }
+
+      .glow-circle {
+        position: absolute;
+        width: 400px;
+        height: 400px;
+        background: radial-gradient(
+          circle,
+          rgba(230, 168, 23, 0.25) 0%,
+          transparent 70%
+        );
+        border-radius: 50%;
+        animation: pulse 2s ease-in-out infinite;
+      }
+      @keyframes pulse {
+        0%,
+        100% {
+          transform: scale(1);
+        }
+        50% {
+          transform: scale(1.1);
+        }
+      }
+
+      .splash-logo {
+        position: relative;
+        z-index: 2;
+        margin-bottom: 20px;
+        animation: popIn 0.7s cubic-bezier(0.34, 1.56, 0.64, 1) 0.3s both;
+      }
+      @keyframes popIn {
+        from {
+          transform: scale(0) rotate(-30deg);
+          opacity: 0;
+        }
+        to {
+          transform: scale(1) rotate(0);
+          opacity: 1;
+        }
+      }
+
+      .splash-logo svg {
+        filter: drop-shadow(0 0 20px rgba(230, 168, 23, 0.8));
+      }
+
+      .splash-label {
+        position: relative;
+        z-index: 2;
+        color: rgba(230, 168, 23, 0.8);
+        font-size: 13px;
+        letter-spacing: 0.4em;
+        text-transform: uppercase;
+        margin-bottom: 10px;
+        animation: fadeUp 0.6s ease 0.5s both;
+      }
+
+      .splash-title {
+        position: relative;
+        z-index: 2;
+        font-family: "Playfair Display", serif;
+        font-size: clamp(3rem, 8vw, 5rem);
+        font-weight: 900;
+        color: var(--gold);
+        text-shadow: 0 0 40px rgba(230, 168, 23, 0.6);
+        text-align: center;
+        animation: fadeUp 0.8s ease 0.7s both;
+      }
+
+      .splash-sub {
+        position: relative;
+        z-index: 2;
+        color: rgba(255, 255, 255, 0.55);
+        font-size: 11px;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+        margin-top: 14px;
+        animation: fadeIn 0.6s ease 1.2s both;
+      }
+
+      .splash-bar {
+        position: absolute;
+        bottom: 40px;
+        width: 200px;
+        height: 2px;
+        background: rgba(230, 168, 23, 0.25);
+        border-radius: 2px;
+        overflow: hidden;
+        z-index: 2;
+      }
+      .splash-bar-inner {
+        height: 100%;
+        background: var(--gold);
+        border-radius: 2px;
+        animation: barLoad 2.3s linear forwards;
+      }
+      @keyframes barLoad {
+        from {
+          width: 0;
+        }
+        to {
+          width: 100%;
+        }
+      }
+      @keyframes fadeUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      /* ====== NAVBAR ====== */
+      nav {
+        position: sticky;
+        top: 0;
+        z-index: 100;
+        background: rgba(250, 245, 238, 0.95);
+        backdrop-filter: blur(12px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-top {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 0 24px;
+        height: 72px;
+        max-width: 1200px;
+        margin: 0 auto;
+      }
+      .nav-brand {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-decoration: none;
+      }
+      .nav-brand-row {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+      }
+      .nav-brand-row svg {
+        color: var(--primary);
+      }
+      .nav-brand-name {
+        font-family: "Playfair Display", serif;
+        font-size: 1.6rem;
+        font-weight: 700;
+        color: var(--primary);
+      }
+      .nav-brand-sub {
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 2px;
+      }
+
+      .nav-auth {
+        display: flex;
+        gap: 10px;
+        align-items: center;
+      }
+      .btn-ghost {
+        background: none;
+        border: none;
+        color: var(--primary);
+        font-weight: 500;
+        padding: 8px 14px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        transition: background 0.2s;
+      }
+      .btn-ghost:hover {
+        background: rgba(122, 0, 33, 0.08);
+      }
+      .btn-primary {
+        background: var(--primary);
+        color: #fff;
+        border: none;
+        padding: 8px 18px;
+        border-radius: 8px;
+        cursor: pointer;
+        font-size: 14px;
+        font-weight: 600;
+        transition: background 0.2s;
+      }
+      .btn-primary:hover {
+        background: var(--primary-light);
+      }
+
+      .nav-links {
+        display: flex;
+        justify-content: center;
+        gap: 36px;
+        padding: 10px 24px;
+        border-top: 1px solid var(--border);
+        background: var(--card-bg);
+      }
+      .nav-link {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        text-decoration: none;
+        color: var(--text);
+        font-size: 14px;
+        font-weight: 500;
+        transition: color 0.2s;
+        padding: 4px 0;
+      }
+      .nav-link:hover,
+      .nav-link.active {
+        color: var(--gold);
+      }
+      .nav-link svg {
+        width: 16px;
+        height: 16px;
+      }
+
+      /* Profile icon */
+      .profile-btn {
+        background: none;
+        border: 1px solid var(--border);
+        border-radius: 50%;
+        width: 38px;
+        height: 38px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        color: var(--primary);
+        transition: border-color 0.2s;
+      }
+      .profile-btn:hover {
+        border-color: var(--primary);
+      }
+
+      /* Mobile nav toggle */
+      .nav-toggle {
+        display: none;
+        background: none;
+        border: none;
+        cursor: pointer;
+        color: var(--text);
+      }
+      .mobile-menu {
+        display: none;
+        flex-direction: column;
+        gap: 8px;
+        padding: 16px 24px;
+        border-top: 1px solid var(--border);
+        background: var(--card-bg);
+      }
+      .mobile-menu.open {
+        display: flex;
+      }
+      .mobile-menu .nav-link {
+        padding: 10px 12px;
+        border-radius: 8px;
+      }
+      .mobile-menu .nav-link:hover {
+        background: rgba(122, 0, 33, 0.06);
+      }
+
+      /* ====== PAGES ====== */
+      .page {
+        display: none;
+      }
+      .page.active {
+        display: block;
+      }
+
+      /* ====== HERO ====== */
+      .hero {
+        background: linear-gradient(135deg, var(--primary) 0%, #5a0017 100%);
+        min-height: 85vh;
+        display: flex;
+        align-items: center;
+        position: relative;
+        overflow: hidden;
+        padding: 60px 24px;
+      }
+      .hero-rings {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        pointer-events: none;
+      }
+      .hero-ring {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid rgba(230, 168, 23, 0.12);
+      }
+      .hero-content {
+        max-width: 1200px;
+        margin: 0 auto;
+        width: 100%;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: center;
+        position: relative;
+        z-index: 2;
+      }
+      .hero-text {
+        color: white;
+      }
+      .hero-eyebrow {
+        font-size: 12px;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        color: rgba(230, 168, 23, 0.8);
+        margin-bottom: 16px;
+      }
+      .hero-title {
+        font-size: clamp(3rem, 6vw, 5rem);
+        font-weight: 900;
+        color: var(--gold);
+        line-height: 1.1;
+        margin-bottom: 18px;
+      }
+      .hero-ceo {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.75);
+        margin-bottom: 12px;
+      }
+      .hero-desc {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.65);
+        line-height: 1.7;
+        margin-bottom: 32px;
+        max-width: 400px;
+      }
+      .hero-btns {
+        display: flex;
+        gap: 14px;
+        flex-wrap: wrap;
+      }
+      .btn-gold {
+        background: var(--gold);
+        color: var(--primary);
+        border: none;
+        padding: 14px 32px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        transition:
+          background 0.2s,
+          transform 0.1s;
+      }
+      .btn-gold:hover {
+        background: var(--gold-light);
+        transform: translateY(-1px);
+      }
+      .btn-outline-gold {
+        background: transparent;
+        color: var(--gold);
+        border: 2px solid var(--gold);
+        padding: 12px 30px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        transition: background 0.2s;
+      }
+      .btn-outline-gold:hover {
+        background: rgba(230, 168, 23, 0.1);
+      }
+
+      .hero-visual {
+        display: flex;
+        justify-content: center;
+      }
+      .camera-circle {
+        width: 340px;
+        height: 340px;
+        border-radius: 50%;
+        border: 4px solid rgba(230, 168, 23, 0.35);
+        background: rgba(230, 168, 23, 0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 0 0 80px rgba(230, 168, 23, 0.25);
+        animation: float 4s ease-in-out infinite;
+      }
+      @keyframes float {
+        0%,
+        100% {
+          transform: translateY(0);
+        }
+        50% {
+          transform: translateY(-12px);
+        }
+      }
+      .camera-circle-inner {
+        width: 240px;
+        height: 240px;
+        border-radius: 50%;
+        border: 2px solid rgba(230, 168, 23, 0.5);
+        background: rgba(230, 168, 23, 0.12);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .camera-circle svg {
+        color: var(--gold);
+        opacity: 0.85;
+      }
+
+      /* ====== SECTIONS ====== */
+      section {
+        padding: 80px 24px;
+      }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .section-title {
+        font-size: 2.2rem;
+        color: var(--primary);
+        margin-bottom: 10px;
+      }
+      .section-sub {
+        color: var(--muted);
+        font-size: 15px;
+        margin-bottom: 16px;
+        max-width: 520px;
+      }
+      .divider {
+        width: 60px;
+        height: 3px;
+        background: var(--gold);
+        border-radius: 3px;
+        margin-bottom: 48px;
+      }
+      .text-center {
+        text-align: center;
+      }
+      .text-center .divider {
+        margin: 12px auto 48px;
+      }
+
+      /* ====== PLANNING HELP BOX ====== */
+      .help-section {
+        background: linear-gradient(
+          135deg,
+          rgba(230, 168, 23, 0.08),
+          rgba(230, 168, 23, 0.04)
+        );
+      }
+      .help-box {
+        max-width: 680px;
+        margin: 0 auto;
+        border: 2px solid var(--gold);
+        border-radius: 20px;
+        padding: 48px;
+        background: var(--card-bg);
+        text-align: center;
+        box-shadow: 0 8px 40px rgba(230, 168, 23, 0.12);
+      }
+      .badge {
+        display: inline-block;
+        background: rgba(230, 168, 23, 0.15);
+        color: #8a5a00;
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        padding: 6px 16px;
+        border-radius: 999px;
+        margin-bottom: 16px;
+      }
+      .help-box h2 {
+        font-size: 1.8rem;
+        color: var(--primary);
+        margin-bottom: 12px;
+        line-height: 1.3;
+      }
+      .help-box p {
+        color: var(--muted);
+        font-size: 15px;
+        margin-bottom: 6px;
+      }
+      .help-box .phone-big {
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: var(--gold);
+        margin: 12px 0 24px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+      }
+      .btn-whatsapp {
+        background: #16a34a;
+        color: white;
+        border: none;
+        padding: 14px 36px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: background 0.2s;
+      }
+      .btn-whatsapp:hover {
+        background: #15803d;
+      }
+
+      /* ====== EMAIL SIGNUP ====== */
+      .email-section {
+        background: var(--primary);
+      }
+      .email-section .section-title {
+        color: var(--gold);
+      }
+      .email-section .section-sub {
+        color: rgba(255, 255, 255, 0.75);
+      }
+      .email-form {
+        display: flex;
+        gap: 12px;
+        max-width: 500px;
+        margin: 0 auto;
+        flex-wrap: wrap;
+      }
+      .email-form input {
+        flex: 1;
+        min-width: 220px;
+        padding: 12px 16px;
+        border: 1px solid rgba(255, 255, 255, 0.25);
+        border-radius: 8px;
+        background: rgba(255, 255, 255, 0.1);
+        color: white;
+        font-size: 14px;
+        font-family: "Inter", sans-serif;
+      }
+      .email-form input::placeholder {
+        color: rgba(255, 255, 255, 0.5);
+      }
+      .email-form input:focus {
+        outline: 2px solid var(--gold);
+      }
+      .email-label {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 13px;
+        margin-bottom: 8px;
+        display: block;
+      }
+
+      /* ====== CONTACT ====== */
+      .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        max-width: 700px;
+        margin: 0 auto;
+      }
+      .contact-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 24px;
+        display: flex;
+        align-items: flex-start;
+        gap: 16px;
+      }
+      .contact-card svg {
+        color: var(--gold);
+        flex-shrink: 0;
+        margin-top: 2px;
+      }
+      .contact-card strong {
+        display: block;
+        color: var(--text);
+        font-weight: 600;
+        margin-bottom: 4px;
+        font-size: 14px;
+      }
+      .contact-card p {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+      .contact-card a {
+        color: var(--muted);
+        text-decoration: none;
+      }
+      .contact-card a:hover {
+        color: var(--gold);
+      }
+
+      /* ====== BOOKING FORM ====== */
+      .form-wrapper {
+        max-width: 680px;
+        margin: 0 auto;
+        border: 2px solid var(--gold);
+        border-radius: 20px;
+        overflow: hidden;
+        box-shadow: 0 12px 48px rgba(122, 0, 33, 0.12);
+      }
+      .form-header {
+        background: var(--primary);
+        padding: 20px 28px;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+      }
+      .form-header svg {
+        color: var(--gold);
+      }
+      .form-header span {
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: var(--gold);
+      }
+      .form-body {
+        padding: 32px 28px;
+        background: var(--card-bg);
+      }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 18px;
+      }
+      .form-group {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+      }
+      .form-group.full {
+        grid-column: 1 / -1;
+      }
+      label {
+        font-size: 13px;
+        font-weight: 600;
+        color: var(--text);
+      }
+      input[type="text"],
+      input[type="tel"],
+      input[type="email"],
+      input[type="date"],
+      input[type="number"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 11px 14px;
+        border: 1px solid var(--border);
+        border-radius: 8px;
+        background: white;
+        font-size: 14px;
+        font-family: "Inter", sans-serif;
+        color: var(--text);
+        transition: border-color 0.2s;
+      }
+      input:focus,
+      select:focus,
+      textarea:focus {
+        outline: none;
+        border-color: var(--primary);
+        box-shadow: 0 0 0 3px rgba(122, 0, 33, 0.08);
+      }
+      .form-submit {
+        width: 100%;
+        padding: 14px;
+        background: var(--primary);
+        color: white;
+        border: none;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        margin-top: 20px;
+        transition: background 0.2s;
+      }
+      .form-submit:hover {
+        background: var(--primary-light);
+      }
+      .form-footer {
+        padding: 16px 28px;
+        background: rgba(0, 0, 0, 0.03);
+        text-align: center;
+        border-top: 1px solid var(--border);
+      }
+      .form-footer p {
+        font-size: 13px;
+        color: var(--muted);
+      }
+      .form-footer a {
+        color: #16a34a;
+        font-weight: 600;
+        text-decoration: none;
+      }
+
+      /* ====== CAMERA TYPES ====== */
+      .camera-bg {
+        background: rgba(122, 0, 33, 0.04);
+      }
+      .cameras-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+      .camera-card {
+        background: var(--card-bg);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        transition:
+          box-shadow 0.3s,
+          border-color 0.3s;
+      }
+      .camera-card:hover {
+        box-shadow: 0 8px 32px rgba(122, 0, 33, 0.12);
+        border-color: rgba(230, 168, 23, 0.5);
+      }
+      .camera-card-header {
+        background: linear-gradient(135deg, var(--primary), #4a0015);
+        padding: 22px;
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+      .camera-card-header-left .eyebrow {
+        color: rgba(230, 168, 23, 0.7);
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+      }
+      .camera-card-header-left h3 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.2rem;
+        color: white;
+        margin: 4px 0 2px;
+      }
+      .camera-card-header-left p {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 12px;
+      }
+      .camera-card-header svg {
+        color: rgba(230, 168, 23, 0.5);
+      }
+      .camera-card-body {
+        padding: 22px;
+      }
+      .camera-card-body p {
+        color: var(--muted);
+        font-size: 13px;
+        line-height: 1.65;
+        margin-bottom: 14px;
+      }
+      .highlight-tag {
+        background: rgba(230, 168, 23, 0.12);
+        color: #7a4f00;
+        font-size: 11px;
+        font-weight: 600;
+        padding: 6px 12px;
+        border-radius: 8px;
+        display: inline-block;
+      }
+
+      /* ====== GALLERY ====== */
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 14px;
+      }
+      .gallery-item {
+        aspect-ratio: 1;
+        border-radius: 14px;
+        overflow: hidden;
+        cursor: pointer;
+        position: relative;
+      }
+      .gallery-item .overlay {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: flex-end;
+        padding: 14px;
+        opacity: 0;
+        transition: opacity 0.3s;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.6), transparent);
+      }
+      .gallery-item:hover .overlay {
+        opacity: 1;
+      }
+      .gallery-item .overlay span {
+        color: white;
+        font-size: 13px;
+        font-weight: 500;
+      }
+      .g1 {
+        background: linear-gradient(135deg, #4a1a1a, #8a1a3a);
+      }
+      .g2 {
+        background: linear-gradient(135deg, #4a2a0a, #8a5a1a);
+      }
+      .g3 {
+        background: linear-gradient(135deg, #3a0a0a, #6a1a1a);
+      }
+      .g4 {
+        background: linear-gradient(135deg, #2a1a3a, #5a1a6a);
+      }
+
+      /* ====== VIDEO ====== */
+      .video-wrap {
+        max-width: 860px;
+        margin: 0 auto;
+        border-radius: 20px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #3a0010, var(--primary));
+        aspect-ratio: 16/9;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        position: relative;
+        box-shadow: 0 20px 60px rgba(122, 0, 33, 0.3);
+        cursor: pointer;
+      }
+      .play-btn {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 72px;
+        height: 72px;
+        border-radius: 50%;
+        background: rgba(230, 168, 23, 0.9);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+          background 0.2s,
+          transform 0.2s;
+      }
+      .play-btn:hover {
+        background: var(--gold);
+        transform: translate(-50%, -50%) scale(1.08);
+      }
+      .video-label {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        padding: 24px 28px;
+        background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+      }
+      .video-label strong {
+        display: block;
+        color: var(--gold);
+        font-size: 1.1rem;
+        font-family: "Playfair Display", serif;
+      }
+      .video-label span {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 13px;
+      }
+
+      /* ====== SOCIAL ====== */
+      .social-section {
+        background: var(--card-bg);
+        border-top: 1px solid var(--border);
+      }
+      .socials {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 24px;
+      }
+      .social-item {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+        text-decoration: none;
+        color: var(--muted);
+        transition: color 0.2s;
+      }
+      .social-item:hover {
+        color: var(--gold);
+      }
+      .social-icon {
+        width: 52px;
+        height: 52px;
+        border-radius: 50%;
+        border: 2px solid var(--border);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: border-color 0.2s;
+      }
+      .social-item:hover .social-icon {
+        border-color: currentColor;
+      }
+      .social-icon svg {
+        width: 22px;
+        height: 22px;
+      }
+      .social-item span {
+        font-size: 12px;
+        font-weight: 500;
+      }
+
+      /* ====== VENDOR PAGE ====== */
+      .vendor-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 22px;
+      }
+      .vendor-card {
+        border: 2px solid var(--border);
+        border-radius: 16px;
+        overflow: hidden;
+        transition:
+          box-shadow 0.3s,
+          border-color 0.3s;
+      }
+      .vendor-card:hover {
+        box-shadow: 0 8px 32px rgba(122, 0, 33, 0.1);
+        border-color: rgba(230, 168, 23, 0.4);
+      }
+      .vendor-card.featured {
+        border-color: var(--gold);
+        background: linear-gradient(
+          to br,
+          rgba(230, 168, 23, 0.05),
+          transparent
+        );
+      }
+      .vendor-header {
+        padding: 18px 20px;
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        background: rgba(0, 0, 0, 0.03);
+      }
+      .vendor-card.featured .vendor-header {
+        background: var(--primary);
+      }
+      .vendor-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        background: rgba(122, 0, 33, 0.1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-shrink: 0;
+      }
+      .vendor-card.featured .vendor-icon {
+        background: var(--gold);
+      }
+      .vendor-icon svg {
+        width: 20px;
+        height: 20px;
+        color: var(--primary);
+      }
+      .vendor-card.featured .vendor-icon svg {
+        color: var(--primary);
+      }
+      .vendor-card.featured .vendor-title {
+        color: var(--gold);
+      }
+      .vendor-card.featured .vendor-sub {
+        color: rgba(255, 255, 255, 0.6);
+      }
+      .vendor-title {
+        font-family: "Playfair Display", serif;
+        font-size: 1rem;
+        color: var(--text);
+        font-weight: 700;
+      }
+      .vendor-sub {
+        font-size: 11px;
+        color: var(--muted);
+        margin-top: 2px;
+      }
+      .featured-tag {
+        margin-left: auto;
+        background: var(--gold);
+        color: var(--primary);
+        font-size: 10px;
+        font-weight: 700;
+        padding: 3px 10px;
+        border-radius: 999px;
+      }
+      .vendor-body {
+        padding: 16px 20px;
+        background: var(--card-bg);
+      }
+      .vendor-body p {
+        font-size: 13px;
+        color: var(--muted);
+        line-height: 1.65;
+      }
+
+      /* ====== PAGE HERO ====== */
+      .page-hero {
+        background: linear-gradient(135deg, var(--primary) 0%, #4a0015 100%);
+        padding: 80px 24px;
+        text-align: center;
+        position: relative;
+        overflow: hidden;
+      }
+      .page-hero-rings {
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .page-hero-ring {
+        position: absolute;
+        border-radius: 50%;
+        border: 1px solid rgba(230, 168, 23, 0.1);
+      }
+      .page-hero-content {
+        position: relative;
+        z-index: 2;
+      }
+      .page-hero-eye {
+        color: rgba(230, 168, 23, 0.8);
+        font-size: 12px;
+        letter-spacing: 0.35em;
+        text-transform: uppercase;
+        margin-bottom: 12px;
+      }
+      .page-hero h1 {
+        font-size: clamp(2.5rem, 6vw, 4.5rem);
+        font-weight: 900;
+        color: var(--gold);
+        margin-bottom: 16px;
+      }
+      .page-hero p {
+        color: rgba(255, 255, 255, 0.75);
+        max-width: 540px;
+        margin: 0 auto;
+        font-size: 15px;
+      }
+
+      /* ====== REAL WEDDINGS ====== */
+      .rw-section {
+        display: flex;
+        flex-direction: column;
+        gap: 80px;
+      }
+      .rw-item {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+        align-items: center;
+      }
+      .rw-item.reverse {
+        direction: rtl;
+      }
+      .rw-item.reverse > * {
+        direction: ltr;
+      }
+      .rw-image {
+        border-radius: 18px;
+        overflow: hidden;
+        aspect-ratio: 4/3;
+        position: relative;
+      }
+      .rw-image-inner {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+      }
+      .rw-image-inner svg {
+        width: 52px;
+        height: 52px;
+        color: rgba(255, 255, 255, 0.25);
+      }
+      .rw-image-inner p {
+        color: rgba(255, 255, 255, 0.35);
+        font-size: 13px;
+        text-align: center;
+        padding: 0 20px;
+      }
+      .rw-section-num {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        margin-bottom: 16px;
+      }
+      .rw-num {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        background: var(--primary);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 700;
+        color: var(--gold);
+        font-size: 15px;
+      }
+      .rw-section-label .eyebrow {
+        color: var(--gold);
+        font-size: 10px;
+        letter-spacing: 0.3em;
+        text-transform: uppercase;
+      }
+      .rw-section-label h2 {
+        font-family: "Playfair Display", serif;
+        font-size: 1.8rem;
+        color: var(--primary);
+      }
+      .rw-style {
+        font-size: 1.1rem;
+        font-weight: 600;
+        color: var(--text);
+        margin-bottom: 12px;
+      }
+      .rw-desc {
+        color: var(--muted);
+        font-size: 14px;
+        line-height: 1.7;
+        margin-bottom: 16px;
+      }
+      .rw-diff {
+        background: rgba(230, 168, 23, 0.1);
+        border: 1px solid rgba(230, 168, 23, 0.3);
+        border-radius: 12px;
+        padding: 14px 16px;
+        margin-bottom: 20px;
+      }
+      .rw-diff .label {
+        color: var(--gold);
+        font-size: 10px;
+        letter-spacing: 0.2em;
+        text-transform: uppercase;
+        font-weight: 700;
+        margin-bottom: 4px;
+      }
+      .rw-diff p {
+        font-size: 13px;
+        color: var(--text);
+      }
+      .rw-btns {
+        display: flex;
+        gap: 12px;
+        flex-wrap: wrap;
+      }
+      .btn-outline {
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        padding: 10px 22px;
+        border-radius: 8px;
+        font-size: 14px;
+        font-weight: 600;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      .btn-outline:hover {
+        background: var(--primary);
+        color: white;
+      }
+
+      /* ====== BOOK NOW ====== */
+      .quick-contact {
+        background: linear-gradient(
+          135deg,
+          rgba(230, 168, 23, 0.1),
+          rgba(230, 168, 23, 0.05)
+        );
+        padding: 40px 24px;
+      }
+      .quick-btns {
+        display: flex;
+        gap: 14px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .btn-telegram {
+        background: #3b82f6;
+        color: white;
+        border: none;
+        padding: 14px 28px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition: background 0.2s;
+      }
+      .btn-telegram:hover {
+        background: #2563eb;
+      }
+      .btn-call {
+        background: transparent;
+        border: 2px solid var(--primary);
+        color: var(--primary);
+        padding: 12px 28px;
+        border-radius: 10px;
+        font-size: 15px;
+        font-weight: 700;
+        cursor: pointer;
+        font-family: "Inter", sans-serif;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        transition:
+          background 0.2s,
+          color 0.2s;
+      }
+      .btn-call:hover {
+        background: var(--primary);
+        color: white;
+      }
+      .forms-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 28px;
+      }
+      .form-wrapper-2 {
+        border: 2px solid var(--primary);
+        opacity: 0.85;
+      }
+      .form-wrapper-2 .form-header {
+        background: var(--gold);
+      }
+      .form-wrapper-2 .form-header svg {
+        color: var(--primary);
+      }
+      .form-wrapper-2 .form-header span {
+        color: var(--primary);
+      }
+      .form-wrapper-2 .form-submit {
+        background: var(--gold);
+        color: var(--primary);
+      }
+      .form-wrapper-2 .form-submit:hover {
+        background: var(--gold-light);
+      }
+      .payment-box {
+        max-width: 600px;
+        margin: 0 auto;
+        text-align: center;
+        border: 2px solid var(--border);
+        border-radius: 20px;
+        padding: 40px;
+        background: var(--card-bg);
+      }
+      .payment-box svg {
+        color: var(--gold);
+        width: 48px;
+        height: 48px;
+        margin: 0 auto 16px;
+      }
+      .payment-box h2 {
+        font-size: 1.5rem;
+        color: var(--primary);
+        margin-bottom: 14px;
+      }
+      .payment-box p {
+        color: var(--muted);
+        font-size: 14px;
+        margin-bottom: 10px;
+      }
+      .payment-highlight {
+        background: rgba(230, 168, 23, 0.1);
+        border-radius: 10px;
+        padding: 14px 20px;
+        color: var(--text);
+        font-size: 14px;
+      }
+      .payment-footer {
+        margin-top: 20px;
+        padding-top: 16px;
+        border-top: 1px solid var(--border);
+        font-size: 13px;
+        color: var(--muted);
+      }
+
+      /* ====== FOOTER ====== */
+      footer {
+        background: var(--primary);
+        color: white;
+        padding: 60px 24px 30px;
+        border-top: 4px solid var(--gold);
+      }
+      .footer-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 40px;
+        max-width: 1100px;
+        margin: 0 auto 40px;
+      }
+      .footer-brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        margin-bottom: 12px;
+      }
+      .footer-brand svg {
+        color: var(--gold);
+      }
+      .footer-brand-name {
+        font-family: "Playfair Display", serif;
+        font-size: 1.3rem;
+        color: var(--gold);
+        font-weight: 700;
+      }
+      .footer-desc {
+        color: rgba(255, 255, 255, 0.65);
+        font-size: 13px;
+        line-height: 1.7;
+        max-width: 260px;
+      }
+      .footer-ceo {
+        color: rgba(230, 168, 23, 0.7);
+        font-size: 10px;
+        letter-spacing: 0.25em;
+        text-transform: uppercase;
+        margin-top: 10px;
+      }
+      .footer-title {
+        color: var(--gold);
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 16px;
+        font-family: "Playfair Display", serif;
+      }
+      .footer-contact-item {
+        display: flex;
+        align-items: flex-start;
+        gap: 10px;
+        margin-bottom: 14px;
+      }
+      .footer-contact-item svg {
+        color: var(--gold);
+        flex-shrink: 0;
+        width: 18px;
+        height: 18px;
+        margin-top: 2px;
+      }
+      .footer-contact-item p {
+        color: rgba(255, 255, 255, 0.8);
+        font-size: 13px;
+        line-height: 1.6;
+      }
+      .footer-links {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+        margin-bottom: 20px;
+      }
+      .footer-links a {
+        color: rgba(255, 255, 255, 0.75);
+        font-size: 14px;
+        text-decoration: none;
+        transition: color 0.2s;
+      }
+      .footer-links a:hover {
+        color: var(--gold);
+      }
+      .footer-socials {
+        display: flex;
+        gap: 14px;
+        padding-top: 16px;
+        border-top: 1px solid rgba(255, 255, 255, 0.15);
+      }
+      .footer-socials a {
+        color: rgba(255, 255, 255, 0.6);
+        transition: color 0.2s;
+      }
+      .footer-socials a:hover {
+        color: var(--gold);
+      }
+      .footer-socials svg {
+        width: 20px;
+        height: 20px;
+      }
+      .footer-bottom {
+        text-align: center;
+        border-top: 1px solid rgba(255, 255, 255, 0.12);
+        padding-top: 24px;
+        color: rgba(255, 255, 255, 0.45);
+        font-size: 13px;
+        max-width: 1100px;
+        margin: 0 auto;
+      }
+      .footer-bottom p:first-child {
+        color: rgba(255, 255, 255, 0.55);
+        margin-bottom: 6px;
+      }
+
+      /* ====== TOAST ====== */
+      #toast {
+        position: fixed;
+        bottom: 32px;
+        right: 32px;
+        background: #1a1a1a;
+        color: white;
+        padding: 14px 22px;
+        border-radius: 12px;
+        font-size: 14px;
+        z-index: 9998;
+        transform: translateY(100px);
+        opacity: 0;
+        transition:
+          transform 0.4s ease,
+          opacity 0.4s ease;
+        max-width: 300px;
+        border-left: 4px solid var(--gold);
+      }
+      #toast.show {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      #toast strong {
+        display: block;
+        margin-bottom: 4px;
+      }
+
+      /* ====== RESPONSIVE ====== */
+      @media (max-width: 900px) {
+        .hero-content {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+        .hero-btns {
+          justify-content: center;
+        }
+        .hero-visual {
+          display: none;
+        }
+        .cameras-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .gallery-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .vendor-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .forms-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .rw-item {
+          grid-template-columns: 1fr;
+        }
+        .rw-item.reverse {
+          direction: ltr;
+        }
+      }
+      @media (max-width: 600px) {
+        .nav-links {
+          display: none;
+        }
+        .nav-toggle {
+          display: block;
+        }
+        .contact-grid {
+          grid-template-columns: 1fr;
+        }
+        .cameras-grid {
+          grid-template-columns: 1fr;
+        }
+        .gallery-grid {
+          grid-template-columns: 1fr 1fr;
+        }
+        .vendor-grid {
+          grid-template-columns: 1fr;
+        }
+        .footer-grid {
+          grid-template-columns: 1fr;
+        }
+        .help-box {
+          padding: 30px 20px;
+        }
+        .form-grid {
+          grid-template-columns: 1fr;
+        }
+        .form-group.full {
+          grid-column: 1;
+        }
+        section {
+          padding: 60px 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- ====== WELCOME SPLASH ====== -->
+    <div id="splash">
+      <div class="rays">
+        <div class="ray" style="transform: rotate(0deg)"></div>
+        <div class="ray" style="transform: rotate(30deg)"></div>
+        <div class="ray" style="transform: rotate(60deg)"></div>
+        <div class="ray" style="transform: rotate(90deg)"></div>
+        <div class="ray" style="transform: rotate(120deg)"></div>
+        <div class="ray" style="transform: rotate(150deg)"></div>
+        <div class="ray" style="transform: rotate(180deg)"></div>
+        <div class="ray" style="transform: rotate(210deg)"></div>
+        <div class="ray" style="transform: rotate(240deg)"></div>
+        <div class="ray" style="transform: rotate(270deg)"></div>
+        <div class="ray" style="transform: rotate(300deg)"></div>
+        <div class="ray" style="transform: rotate(330deg)"></div>
+      </div>
+      <div class="glow-circle"></div>
+      <div class="splash-logo">
+        <svg
+          width="80"
+          height="80"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="#e6a817"
+          stroke-width="1.2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+        >
+          <path
+            d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+          />
+          <circle cx="12" cy="13" r="3" />
+        </svg>
+      </div>
+      <p class="splash-label">Welcome to</p>
+      <h1 class="splash-title">S.R.K Studio</h1>
+      <p class="splash-sub">Cinematic Wedding Photography &amp; Videography</p>
+      <div class="splash-bar"><div class="splash-bar-inner"></div></div>
+    </div>
+
+    <!-- ====== NAVBAR ====== -->
+    <nav id="navbar">
+      <div class="nav-top">
+        <button class="profile-btn" title="Profile">
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <circle cx="12" cy="8" r="4" />
+            <path d="M4 20c0-4 3.6-7 8-7s8 3 8 7" />
+          </svg>
+        </button>
+        <button class="nav-toggle" onclick="toggleMobile()" title="Menu">
+          <svg
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <line x1="3" y1="6" x2="21" y2="6" />
+            <line x1="3" y1="12" x2="21" y2="12" />
+            <line x1="3" y1="18" x2="21" y2="18" />
+          </svg>
+        </button>
+        <a href="#" class="nav-brand" onclick="showPage('home')">
+          <div class="nav-brand-row">
+            <svg
+              width="28"
+              height="28"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="#7a0021"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+              />
+              <circle cx="12" cy="13" r="3" />
+            </svg>
+            <span class="nav-brand-name">S.R.K Studio</span>
+          </div>
+          <span class="nav-brand-sub">CEO: Sharvan Yadav</span>
+        </a>
+        <div class="nav-auth">
+          <button
+            class="btn-ghost"
+            onclick="showToast('Log In', 'Feature coming soon!')"
+          >
+            Log In
+          </button>
+          <button
+            class="btn-primary"
+            onclick="showToast('Sign Up', 'Feature coming soon!')"
+          >
+            Sign Up
+          </button>
+        </div>
+      </div>
+      <div class="nav-links">
+        <a
+          href="#"
+          class="nav-link active"
+          id="nl-home"
+          onclick="showPage('home')"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M3 9.5L12 3l9 6.5V20a1 1 0 0 1-1 1H4a1 1 0 0 1-1-1V9.5z" />
+            <polyline points="9 22 9 12 15 12 15 22" />
+          </svg>
+          Home
+        </a>
+        <a
+          href="#"
+          class="nav-link"
+          id="nl-vendor"
+          onclick="showPage('vendor')"
+        >
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+            <circle cx="9" cy="7" r="4" />
+            <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+            <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+          </svg>
+          Wedding Vendors
+        </a>
+        <a href="#" class="nav-link" id="nl-real" onclick="showPage('real')">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <path
+              d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+            />
+            <circle cx="12" cy="13" r="3" />
+          </svg>
+          Real Weddings
+        </a>
+        <a href="#" class="nav-link" id="nl-book" onclick="showPage('book')">
+          <svg
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+          >
+            <rect x="3" y="4" width="18" height="18" rx="2" />
+            <line x1="16" y1="2" x2="16" y2="6" />
+            <line x1="8" y1="2" x2="8" y2="6" />
+            <line x1="3" y1="10" x2="21" y2="10" />
+          </svg>
+          Book Now
+        </a>
+      </div>
+      <div class="mobile-menu" id="mobileMenu">
+        <a href="#" class="nav-link" onclick="showPage('home')">Home</a>
+        <a href="#" class="nav-link" onclick="showPage('vendor')"
+          >Wedding Vendors</a
+        >
+        <a href="#" class="nav-link" onclick="showPage('real')"
+          >Real Weddings</a
+        >
+        <a href="#" class="nav-link" onclick="showPage('book')">Book Now</a>
+      </div>
+    </nav>
+
+    <!-- ====== HOME PAGE ====== -->
+    <div class="page active" id="page-home">
+      <!-- Hero -->
+      <div class="hero">
+        <div class="hero-rings">
+          <div class="hero-ring" style="width: 150px; height: 150px"></div>
+          <div class="hero-ring" style="width: 280px; height: 280px"></div>
+          <div class="hero-ring" style="width: 420px; height: 420px"></div>
+          <div class="hero-ring" style="width: 560px; height: 560px"></div>
+          <div class="hero-ring" style="width: 700px; height: 700px"></div>
+        </div>
+        <div class="hero-content">
+          <div class="hero-text">
+            <p class="hero-eyebrow">Premium Wedding Studio</p>
+            <h1 class="hero-title">S.R.K<br />Studio</h1>
+            <p class="hero-ceo">CEO: Sharvan Yadav</p>
+            <p class="hero-desc">
+              Capturing the most precious moments of your life with cinematic
+              brilliance and artistic vision.
+            </p>
+            <div class="hero-btns">
+              <button class="btn-gold" onclick="showPage('book')">
+                Book Now
+              </button>
+              <button class="btn-outline-gold" onclick="showPage('real')">
+                View Our Work
+              </button>
+            </div>
+          </div>
+          <div class="hero-visual">
+            <div class="camera-circle">
+              <div class="camera-circle-inner">
+                <svg
+                  width="100"
+                  height="100"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                  />
+                  <circle cx="12" cy="13" r="3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Wedding Planning Help -->
+      <section class="help-section">
+        <div class="container">
+          <div class="help-box">
+            <div class="badge">Special Offer</div>
+            <h2>GET WEDDING PLANNING HELP FROM S.R.K Studio</h2>
+            <p>S.R.K Studio is Now offering</p>
+            <p><strong>"Wedding Assistance"</strong> on WhatsApp / Telegram</p>
+            <p class="phone-big">
+              <svg
+                width="22"
+                height="22"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.4 2 2 0 0 1 3.55 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z"
+                />
+              </svg>
+              9110066743
+            </p>
+            <a
+              href="https://wa.me/919110066743"
+              target="_blank"
+              class="btn-whatsapp"
+            >
+              <svg
+                width="20"
+                height="20"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"
+                />
+              </svg>
+              Join Now on WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Email Signup -->
+      <section class="email-section">
+        <div class="container text-center">
+          <h2 class="section-title">JOIN OUR EXCLUSIVE EMAIL LIST!</h2>
+          <p
+            class="section-sub"
+            style="color: rgba(255, 255, 255, 0.75); margin: 0 auto 28px"
+          >
+            The best of inspiration and ideas delivered to your inbox!
+          </p>
+          <form
+            onsubmit="handleEmail(event)"
+            style="max-width: 480px; margin: 0 auto"
+          >
+            <label class="email-label">Your Email Address*</label>
+            <div class="email-form">
+              <input
+                type="email"
+                placeholder="your@email.com"
+                required
+                id="emailInput"
+              />
+              <button type="submit" class="btn-gold">Subscribe</button>
+            </div>
+          </form>
+        </div>
+      </section>
+
+      <!-- Contact -->
+      <section>
+        <div class="container">
+          <div class="text-center">
+            <h2 class="section-title">Contact Us</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="contact-grid">
+            <div class="contact-card">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.4 2 2 0 0 1 3.55 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z"
+                />
+              </svg>
+              <div>
+                <strong>Phone / WhatsApp / Telegram</strong>
+                <p><a href="tel:+919110066743">+91 9110066743</a></p>
+              </div>
+            </div>
+            <div class="contact-card">
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                <circle cx="12" cy="10" r="3" />
+              </svg>
+              <div>
+                <strong>Our Address</strong>
+                <p>
+                  State: Bihar<br />District: Saharsa<br />Street: Yadav Chowk,
+                  Dumrail<br />Pincode: 852201
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Booking Form -->
+      <section style="background: white">
+        <div class="container">
+          <div class="text-center">
+            <h2 class="section-title">Book My Wedding Plan</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="form-wrapper">
+            <div class="form-header">
+              <svg
+                width="26"
+                height="26"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="1.5"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              >
+                <path
+                  d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                />
+                <circle cx="12" cy="13" r="3" />
+              </svg>
+              <span>S.R.K Studio</span>
+            </div>
+            <div class="form-body">
+              <form onsubmit="handleBooking(event)">
+                <div class="form-grid">
+                  <div class="form-group">
+                    <label>Name *</label>
+                    <input type="text" placeholder="Your full name" required />
+                  </div>
+                  <div class="form-group">
+                    <label>Number *</label>
+                    <input
+                      type="tel"
+                      placeholder="Your phone number"
+                      required
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label>Email Address *</label>
+                    <input type="email" placeholder="your@email.com" required />
+                  </div>
+                  <div class="form-group">
+                    <label>State *</label>
+                    <input type="text" placeholder="Your state" required />
+                  </div>
+                  <div class="form-group">
+                    <label>District *</label>
+                    <input type="text" placeholder="Your district" required />
+                  </div>
+                  <div class="form-group">
+                    <label>Location / Venue *</label>
+                    <input
+                      type="text"
+                      placeholder="Wedding venue / city"
+                      required
+                    />
+                  </div>
+                  <div class="form-group full">
+                    <label>Choose Camera Type *</label>
+                    <select required>
+                      <option value="">-- Select Camera Type --</option>
+                      <option>Canon EOS R5 — Full-Frame Mirrorless</option>
+                      <option>Sony Alpha A7 IV — Low-Light Mastery</option>
+                      <option>Nikon Z9 — Pro-Grade Flagship</option>
+                      <option>Fujifilm GFX 100S — Medium Format</option>
+                      <option>DJI Ronin 4D — Cinema Camera</option>
+                    </select>
+                  </div>
+                </div>
+                <button type="submit" class="form-submit">
+                  Submit Booking Request
+                </button>
+              </form>
+            </div>
+            <div class="form-footer">
+              <p>
+                OR, call/WhatsApp us directly:
+                <a href="https://wa.me/919110066743">+91 9110066743</a>
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Camera Types -->
+      <section class="camera-bg">
+        <div class="container">
+          <div class="text-center">
+            <h2 class="section-title">Our Camera Collection</h2>
+            <p class="section-sub" style="margin: 0 auto 12px">
+              We use world-class cameras to deliver stunning wedding photography
+              and videography
+            </p>
+            <div class="divider"></div>
+          </div>
+          <div class="cameras-grid">
+            <div class="camera-card">
+              <div class="camera-card-header">
+                <div class="camera-card-header-left">
+                  <p class="eyebrow">Section 1</p>
+                  <h3>Canon EOS R5</h3>
+                  <p>DSLR / Mirrorless</p>
+                </div>
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                  />
+                  <circle cx="12" cy="13" r="3" />
+                </svg>
+              </div>
+              <div class="camera-card-body">
+                <p>
+                  Full-frame mirrorless powerhouse with 45MP resolution and 8K
+                  RAW video. Perfect for capturing every tear, every smile,
+                  every precious wedding moment in breathtaking detail.
+                </p>
+                <span class="highlight-tag"
+                  >8K RAW Video · 45MP · IBIS Stabilization</span
+                >
+              </div>
+            </div>
+            <div class="camera-card">
+              <div class="camera-card-header">
+                <div class="camera-card-header-left">
+                  <p class="eyebrow">Section 2</p>
+                  <h3>Sony Alpha A7 IV</h3>
+                  <p>Mirrorless</p>
+                </div>
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                  />
+                  <circle cx="12" cy="13" r="3" />
+                </svg>
+              </div>
+              <div class="camera-card-body">
+                <p>
+                  Exceptional low-light performance with 33MP BSI sensor. Ideal
+                  for indoor ceremonies, dimly lit mandap shots, and candid
+                  nighttime celebrations.
+                </p>
+                <span class="highlight-tag"
+                  >Super Low-Light · 33MP · Real-time Tracking</span
+                >
+              </div>
+            </div>
+            <div class="camera-card">
+              <div class="camera-card-header">
+                <div class="camera-card-header-left">
+                  <p class="eyebrow">Section 3</p>
+                  <h3>Nikon Z9</h3>
+                  <p>Pro-Grade Flagship</p>
+                </div>
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                  />
+                  <circle cx="12" cy="13" r="3" />
+                </svg>
+              </div>
+              <div class="camera-card-body">
+                <p>
+                  The professional's choice with a 45.7MP stacked CMOS sensor
+                  and zero blackout shooting. Captures fast-moving moments like
+                  pheras and baraats without missing a single frame.
+                </p>
+                <span class="highlight-tag"
+                  >45.7MP Stacked · Zero Blackout · 120fps</span
+                >
+              </div>
+            </div>
+            <div class="camera-card">
+              <div class="camera-card-header">
+                <div class="camera-card-header-left">
+                  <p class="eyebrow">Section 4</p>
+                  <h3>Fujifilm GFX 100S</h3>
+                  <p>Medium Format</p>
+                </div>
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                  />
+                  <circle cx="12" cy="13" r="3" />
+                </svg>
+              </div>
+              <div class="camera-card-body">
+                <p>
+                  Cinema-grade 102MP medium format sensor that renders skin
+                  tones with unparalleled richness. Produces images with the
+                  depth and texture of fine art portraits.
+                </p>
+                <span class="highlight-tag"
+                  >102MP Medium Format · Film Simulation · Cinematic</span
+                >
+              </div>
+            </div>
+            <div class="camera-card">
+              <div class="camera-card-header">
+                <div class="camera-card-header-left">
+                  <p class="eyebrow">Section 5</p>
+                  <h3>DJI Ronin 4D</h3>
+                  <p>Cinema Camera</p>
+                </div>
+                <svg
+                  width="36"
+                  height="36"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                >
+                  <path
+                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                  />
+                  <circle cx="12" cy="13" r="3" />
+                </svg>
+              </div>
+              <div class="camera-card-body">
+                <p>
+                  4-axis stabilized cinema camera with built-in LiDAR focusing.
+                  Creates silky smooth cinematic wedding films — from wide
+                  aerial drone shots to intimate close-ups.
+                </p>
+                <span class="highlight-tag"
+                  >4-Axis Stabilized · Cinema 4K · LiDAR AF</span
+                >
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gallery -->
+      <section style="background: white">
+        <div class="container">
+          <div class="text-center">
+            <h2 class="section-title">Cinematic Wedding Gallery</h2>
+            <p class="section-sub" style="margin: 0 auto 12px">
+              Moments that last a lifetime, captured with artistic precision
+            </p>
+            <div class="divider"></div>
+          </div>
+          <div class="gallery-grid">
+            <div class="gallery-item g1">
+              <div class="overlay"><span>Bride Portrait</span></div>
+            </div>
+            <div class="gallery-item g2">
+              <div class="overlay"><span>Wedding Ceremony</span></div>
+            </div>
+            <div class="gallery-item g3">
+              <div class="overlay"><span>Candid Moment</span></div>
+            </div>
+            <div class="gallery-item g4">
+              <div class="overlay"><span>Reception Night</span></div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Video -->
+      <section style="background: rgba(122, 0, 33, 0.04)">
+        <div class="container">
+          <div class="text-center">
+            <h2 class="section-title">Cinematic Videography</h2>
+            <p class="section-sub" style="margin: 0 auto 12px">
+              Experience your wedding story retold through our cinematic lens
+            </p>
+            <div class="divider"></div>
+          </div>
+          <div
+            class="video-wrap"
+            onclick="showToast('Video', 'Video reel coming soon!')"
+          >
+            <div class="play-btn">
+              <svg width="28" height="28" viewBox="0 0 24 24" fill="white">
+                <polygon points="5 3 19 12 5 21 5 3" />
+              </svg>
+            </div>
+            <div class="video-label">
+              <strong>S.R.K Studio — Wedding Highlights Reel</strong>
+              <span>Cinematic wedding videography by Sharvan Yadav</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Social Media -->
+      <section class="social-section">
+        <div class="container">
+          <div class="text-center" style="margin-bottom: 32px">
+            <h2 class="section-title">Follow Us</h2>
+            <p style="color: var(--muted); font-size: 13px">
+              Stay connected for latest work and inspiration
+            </p>
+          </div>
+          <div class="socials">
+            <a href="#" class="social-item">
+              <div class="social-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle cx="17.5" cy="6.5" r="1" fill="currentColor" />
+                </svg>
+              </div>
+              <span>Instagram</span>
+            </a>
+            <a href="#" class="social-item">
+              <div class="social-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </div>
+              <span>Facebook</span>
+            </a>
+            <a href="#" class="social-item">
+              <div class="social-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                  />
+                  <rect x="2" y="9" width="4" height="12" />
+                  <circle cx="4" cy="4" r="2" />
+                </svg>
+              </div>
+              <span>LinkedIn</span>
+            </a>
+            <a href="#" class="social-item">
+              <div class="social-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path d="M4 4l16 16M4 20L20 4" />
+                </svg>
+              </div>
+              <span>X (Twitter)</span>
+            </a>
+            <a href="#" class="social-item">
+              <div class="social-icon">
+                <svg
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <path
+                    d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                  />
+                  <polygon
+                    fill="white"
+                    points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+                  />
+                </svg>
+              </div>
+              <span>YouTube</span>
+            </a>
+          </div>
+          <p
+            style="
+              text-align: center;
+              font-size: 12px;
+              color: var(--muted);
+              margin-top: 18px;
+            "
+          >
+            Social links coming soon
+          </p>
+        </div>
+      </section>
+    </div>
+    <!-- end home page -->
+
+    <!-- ====== WEDDING VENDOR PAGE ====== -->
+    <div class="page" id="page-vendor">
+      <div class="page-hero">
+        <div class="page-hero-rings">
+          <div class="page-hero-ring" style="width: 120px; height: 120px"></div>
+          <div class="page-hero-ring" style="width: 250px; height: 250px"></div>
+          <div class="page-hero-ring" style="width: 400px; height: 400px"></div>
+        </div>
+        <div class="page-hero-content">
+          <p class="page-hero-eye">S.R.K Studio Presents</p>
+          <h1>Wedding Vendors</h1>
+          <p>
+            Everything you need under one roof — from photography to catering,
+            decoration to music.
+          </p>
+        </div>
+      </div>
+
+      <section>
+        <div class="container">
+          <div class="text-center">
+            <h2 class="section-title">Our Vendor Categories</h2>
+            <div class="divider"></div>
+          </div>
+          <div class="vendor-grid">
+            <div class="vendor-card featured">
+              <div class="vendor-header">
+                <div class="vendor-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                    />
+                    <circle cx="12" cy="13" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="vendor-title">Photography &amp; Videography</div>
+                  <div class="vendor-sub">S.R.K Studio (Us!)</div>
+                </div>
+                <div class="featured-tag">Featured</div>
+              </div>
+              <div class="vendor-body">
+                <p>
+                  Premium cinematic wedding photography and videography by CEO
+                  Sharvan Yadav. We capture every emotion with world-class
+                  cameras.
+                </p>
+              </div>
+            </div>
+            <div class="vendor-card">
+              <div class="vendor-header">
+                <div class="vendor-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M3 11l19-9-9 19-2-8-8-2z" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="vendor-title">Catering Services</div>
+                  <div class="vendor-sub">Traditional &amp; Modern Cuisine</div>
+                </div>
+              </div>
+              <div class="vendor-body">
+                <p>
+                  From traditional thalis to modern fusion menus, connect with
+                  top catering teams for your wedding feast.
+                </p>
+              </div>
+            </div>
+            <div class="vendor-card">
+              <div class="vendor-header">
+                <div class="vendor-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="12" r="5" />
+                    <path
+                      d="M12 1v2M12 21v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M1 12h2M21 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="vendor-title">Decoration &amp; Mandap</div>
+                  <div class="vendor-sub">Floral &amp; Theme Decor</div>
+                </div>
+              </div>
+              <div class="vendor-body">
+                <p>
+                  Stunning mandap setups, floral arrangements, and themed
+                  decoration for every wedding style and budget.
+                </p>
+              </div>
+            </div>
+            <div class="vendor-card">
+              <div class="vendor-header">
+                <div class="vendor-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <circle cx="12" cy="8" r="6" />
+                    <path
+                      d="M8.56 2.75c4.37 6.03 6.02 9.42 8.03 17.72m2.54-15.38c-3.72 4.35-8.94 5.66-16.88 5.85m19.5 1.9c-3.5-.93-6.63-.82-8.94 0-2.58.92-5.01 2.86-7.44 6.32"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="vendor-title">Bridal Makeup</div>
+                  <div class="vendor-sub">Professional Bridal Artists</div>
+                </div>
+              </div>
+              <div class="vendor-body">
+                <p>
+                  Look your absolute best on your special day with our network
+                  of experienced bridal makeup artists.
+                </p>
+              </div>
+            </div>
+            <div class="vendor-card">
+              <div class="vendor-header">
+                <div class="vendor-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path d="M9 18V5l12-2v13" />
+                    <circle cx="6" cy="18" r="3" />
+                    <circle cx="18" cy="16" r="3" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="vendor-title">DJ &amp; Music</div>
+                  <div class="vendor-sub">Entertainment &amp; Sound</div>
+                </div>
+              </div>
+              <div class="vendor-body">
+                <p>
+                  From traditional beats to modern DJ nights, find the perfect
+                  entertainment to make your celebration unforgettable.
+                </p>
+              </div>
+            </div>
+            <div class="vendor-card">
+              <div class="vendor-header">
+                <div class="vendor-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="vendor-title">Flowers &amp; Garlands</div>
+                  <div class="vendor-sub">Fresh Floral Arrangements</div>
+                </div>
+              </div>
+              <div class="vendor-body">
+                <p>
+                  Beautiful fresh flower decorations, wedding garlands
+                  (varmala), and bouquets for the bridal party.
+                </p>
+              </div>
+            </div>
+            <div class="vendor-card">
+              <div class="vendor-header">
+                <div class="vendor-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"
+                    />
+                  </svg>
+                </div>
+                <div>
+                  <div class="vendor-title">Mehendi Artists</div>
+                  <div class="vendor-sub">Traditional &amp; Contemporary</div>
+                </div>
+              </div>
+              <div class="vendor-body">
+                <p>
+                  Intricate mehndi designs from traditional Rajasthani to modern
+                  Arabic patterns for the bride and family.
+                </p>
+              </div>
+            </div>
+            <div class="vendor-card">
+              <div class="vendor-header">
+                <div class="vendor-icon">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="2"
+                  >
+                    <path
+                      d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"
+                    />
+                    <polyline points="14 2 14 8 20 8" />
+                    <line x1="16" y1="13" x2="8" y2="13" />
+                    <line x1="16" y1="17" x2="8" y2="17" />
+                    <polyline points="10 9 9 9 8 9" />
+                  </svg>
+                </div>
+                <div>
+                  <div class="vendor-title">Wedding Invitations</div>
+                  <div class="vendor-sub">Printed &amp; Digital Cards</div>
+                </div>
+              </div>
+              <div class="vendor-body">
+                <p>
+                  Beautiful wedding invitation cards — both printed and digital
+                  — to set the perfect tone for your celebration.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
+        style="
+          background: linear-gradient(
+            135deg,
+            rgba(230, 168, 23, 0.08),
+            rgba(230, 168, 23, 0.03)
+          );
+          border-top: 1px solid var(--border);
+        "
+      >
+        <div class="container text-center">
+          <h2 class="section-title">Need Help Planning Your Wedding?</h2>
+          <p
+            style="
+              color: var(--muted);
+              margin: 12px auto 28px;
+              max-width: 400px;
+              font-size: 15px;
+            "
+          >
+            Contact S.R.K Studio for wedding planning assistance on WhatsApp or
+            Telegram
+          </p>
+          <div class="hero-btns" style="justify-content: center">
+            <a
+              href="https://wa.me/919110066743"
+              target="_blank"
+              class="btn-whatsapp"
+            >
+              <svg
+                width="18"
+                height="18"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+              >
+                <path
+                  d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"
+                />
+              </svg>
+              WhatsApp: 9110066743
+            </a>
+            <button class="btn-gold" onclick="showPage('book')">
+              Book Now
+            </button>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ====== REAL WEDDINGS PAGE ====== -->
+    <div class="page" id="page-real">
+      <div class="page-hero">
+        <div class="page-hero-rings">
+          <div class="page-hero-ring" style="width: 140px; height: 140px"></div>
+          <div class="page-hero-ring" style="width: 280px; height: 280px"></div>
+          <div class="page-hero-ring" style="width: 450px; height: 450px"></div>
+        </div>
+        <div class="page-hero-content">
+          <p class="page-hero-eye">S.R.K Studio</p>
+          <h1>Real Weddings</h1>
+          <p>
+            Explore our work through each camera lens — discover which
+            photography style speaks to your vision
+          </p>
+        </div>
+      </div>
+
+      <section>
+        <div class="container">
+          <div class="rw-section">
+            <!-- Section 1 -->
+            <div class="rw-item">
+              <div
+                class="rw-image"
+                style="background: linear-gradient(135deg, #4a1a1a, #8a1a3a)"
+              >
+                <div class="rw-image-inner">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.2"
+                  >
+                    <path
+                      d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                    />
+                    <circle cx="12" cy="13" r="3" />
+                  </svg>
+                  <p>Shot on Canon EOS R5</p>
+                </div>
+              </div>
+              <div>
+                <div class="rw-section-num">
+                  <div class="rw-num">1</div>
+                  <div class="rw-section-label">
+                    <div class="eyebrow">Section 1</div>
+                    <h2>Canon EOS R5</h2>
+                  </div>
+                </div>
+                <p class="rw-style">Full-Frame Mirrorless Elegance</p>
+                <p class="rw-desc">
+                  Shot on the Canon EOS R5, this section showcases ultra-sharp
+                  portraits and wide-angle ceremony coverage at 45 megapixels.
+                  The full-frame sensor captures rich skin tones under mandap
+                  lighting, while 8K RAW video enables stunning cinematic
+                  reframes during editing.
+                </p>
+                <div class="rw-diff">
+                  <div class="label">What Makes This Different</div>
+                  <p>
+                    Ultra-detailed portraits, vibrant color science, exceptional
+                    dynamic range in mixed lighting
+                  </p>
+                </div>
+                <div class="rw-btns">
+                  <button
+                    class="btn-outline"
+                    onclick="showToast('Video', 'Coming soon!')"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                    Watch Video
+                  </button>
+                  <button class="btn-gold" onclick="showPage('book')">
+                    Book This Style
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 2 -->
+            <div class="rw-item reverse">
+              <div
+                class="rw-image"
+                style="background: linear-gradient(135deg, #4a2a0a, #8a5a1a)"
+              >
+                <div class="rw-image-inner">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.2"
+                  >
+                    <path
+                      d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                    />
+                    <circle cx="12" cy="13" r="3" />
+                  </svg>
+                  <p>Shot on Sony Alpha A7 IV</p>
+                </div>
+              </div>
+              <div>
+                <div class="rw-section-num">
+                  <div class="rw-num">2</div>
+                  <div class="rw-section-label">
+                    <div class="eyebrow">Section 2</div>
+                    <h2>Sony Alpha A7 IV</h2>
+                  </div>
+                </div>
+                <p class="rw-style">Low-Light Candid Mastery</p>
+                <p class="rw-desc">
+                  The Sony A7 IV's BSI sensor excels in indoor ceremonies and
+                  evening receptions where light is limited. Real-time
+                  eye-tracking ensures sharp candid shots even when subjects are
+                  moving. Perfect for emotional moments in dimly lit halls and
+                  night sangeet functions.
+                </p>
+                <div class="rw-diff">
+                  <div class="label">What Makes This Different</div>
+                  <p>
+                    Outstanding low-light performance, real-time subject
+                    tracking, natural skin tones in artificial light
+                  </p>
+                </div>
+                <div class="rw-btns">
+                  <button
+                    class="btn-outline"
+                    onclick="showToast('Video', 'Coming soon!')"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                    Watch Video
+                  </button>
+                  <button class="btn-gold" onclick="showPage('book')">
+                    Book This Style
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 3 -->
+            <div class="rw-item">
+              <div
+                class="rw-image"
+                style="background: linear-gradient(135deg, #3a0a0a, #6a1a1a)"
+              >
+                <div class="rw-image-inner">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.2"
+                  >
+                    <path
+                      d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                    />
+                    <circle cx="12" cy="13" r="3" />
+                  </svg>
+                  <p>Shot on Nikon Z9</p>
+                </div>
+              </div>
+              <div>
+                <div class="rw-section-num">
+                  <div class="rw-num">3</div>
+                  <div class="rw-section-label">
+                    <div class="eyebrow">Section 3</div>
+                    <h2>Nikon Z9</h2>
+                  </div>
+                </div>
+                <p class="rw-style">High-Speed Action Coverage</p>
+                <p class="rw-desc">
+                  The Nikon Z9's zero-blackout shooting at 20fps captures the
+                  energy of baraat processions, phera rituals, and jaimala
+                  exchanges without missing a single frame. Every expression,
+                  every movement preserved with pro-grade precision.
+                </p>
+                <div class="rw-diff">
+                  <div class="label">What Makes This Different</div>
+                  <p>
+                    Zero blackout, ultra-fast burst shooting, perfect for
+                    fast-moving ceremonies and celebrations
+                  </p>
+                </div>
+                <div class="rw-btns">
+                  <button
+                    class="btn-outline"
+                    onclick="showToast('Video', 'Coming soon!')"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                    Watch Video
+                  </button>
+                  <button class="btn-gold" onclick="showPage('book')">
+                    Book This Style
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 4 -->
+            <div class="rw-item reverse">
+              <div
+                class="rw-image"
+                style="background: linear-gradient(135deg, #2a1a3a, #5a1a6a)"
+              >
+                <div class="rw-image-inner">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.2"
+                  >
+                    <path
+                      d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                    />
+                    <circle cx="12" cy="13" r="3" />
+                  </svg>
+                  <p>Shot on Fujifilm GFX 100S</p>
+                </div>
+              </div>
+              <div>
+                <div class="rw-section-num">
+                  <div class="rw-num">4</div>
+                  <div class="rw-section-label">
+                    <div class="eyebrow">Section 4</div>
+                    <h2>Fujifilm GFX 100S</h2>
+                  </div>
+                </div>
+                <p class="rw-style">Medium Format Fine Art</p>
+                <p class="rw-desc">
+                  The GFX 100S renders images with the depth and texture of
+                  painted portraits. At 102 megapixels, bridal details —
+                  embroidery, jewellery, mehendi — are captured with
+                  museum-quality precision. Film simulations add a timeless,
+                  editorial quality to your wedding album.
+                </p>
+                <div class="rw-diff">
+                  <div class="label">What Makes This Different</div>
+                  <p>
+                    102MP medium format, extraordinary detail in bridal
+                    portraits, fine art tonal quality
+                  </p>
+                </div>
+                <div class="rw-btns">
+                  <button
+                    class="btn-outline"
+                    onclick="showToast('Video', 'Coming soon!')"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                    Watch Video
+                  </button>
+                  <button class="btn-gold" onclick="showPage('book')">
+                    Book This Style
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Section 5 -->
+            <div class="rw-item">
+              <div
+                class="rw-image"
+                style="background: linear-gradient(135deg, #0a1a3a, #1a3a6a)"
+              >
+                <div class="rw-image-inner">
+                  <svg
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    stroke-width="1.2"
+                  >
+                    <path
+                      d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                    />
+                    <circle cx="12" cy="13" r="3" />
+                  </svg>
+                  <p>Shot on DJI Ronin 4D</p>
+                </div>
+              </div>
+              <div>
+                <div class="rw-section-num">
+                  <div class="rw-num">5</div>
+                  <div class="rw-section-label">
+                    <div class="eyebrow">Section 5</div>
+                    <h2>DJI Ronin 4D</h2>
+                  </div>
+                </div>
+                <p class="rw-style">Cinematic Motion Storytelling</p>
+                <p class="rw-desc">
+                  The DJI Ronin 4D with its integrated 4-axis stabilization
+                  creates silky Hollywood-smooth video sequences. Combined with
+                  drone aerial shots of the venue, it delivers a wedding film
+                  that feels like a Bollywood production — sweeping, emotional,
+                  and breathtaking.
+                </p>
+                <div class="rw-diff">
+                  <div class="label">What Makes This Different</div>
+                  <p>
+                    Cinema 4K stabilized video, aerial drone shots,
+                    Hollywood-grade motion storytelling
+                  </p>
+                </div>
+                <div class="rw-btns">
+                  <button
+                    class="btn-outline"
+                    onclick="showToast('Video', 'Coming soon!')"
+                  >
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="currentColor"
+                    >
+                      <polygon points="5 3 19 12 5 21 5 3" />
+                    </svg>
+                    Watch Video
+                  </button>
+                  <button class="btn-gold" onclick="showPage('book')">
+                    Book This Style
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="background: var(--primary); text-align: center">
+        <div class="container">
+          <h2 style="font-size: 2rem; color: var(--gold); margin-bottom: 14px">
+            Ready to Book Your Wedding?
+          </h2>
+          <p
+            style="
+              color: rgba(255, 255, 255, 0.75);
+              max-width: 400px;
+              margin: 0 auto 28px;
+              font-size: 15px;
+            "
+          >
+            Choose your preferred camera style and let S.R.K Studio create your
+            wedding story
+          </p>
+          <button
+            class="btn-gold"
+            onclick="showPage('book')"
+            style="font-size: 15px; padding: 14px 40px"
+          >
+            Book Now
+          </button>
+        </div>
+      </section>
+    </div>
+
+    <!-- ====== BOOK NOW PAGE ====== -->
+    <div class="page" id="page-book">
+      <div class="page-hero">
+        <div class="page-hero-rings">
+          <div class="page-hero-ring" style="width: 100px; height: 100px"></div>
+          <div class="page-hero-ring" style="width: 220px; height: 220px"></div>
+          <div class="page-hero-ring" style="width: 360px; height: 360px"></div>
+        </div>
+        <div class="page-hero-content">
+          <p class="page-hero-eye">S.R.K Studio</p>
+          <h1>Book Your Wedding</h1>
+          <p>
+            Fill in your details below or reach us directly on WhatsApp /
+            Telegram
+          </p>
+        </div>
+      </div>
+
+      <div class="quick-contact">
+        <div class="quick-btns">
+          <a
+            href="https://wa.me/919110066743"
+            target="_blank"
+            class="btn-whatsapp"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413"
+              />
+            </svg>
+            WhatsApp: 9110066743
+          </a>
+          <a
+            href="https://t.me/9110066743"
+            target="_blank"
+            class="btn-telegram"
+          >
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M11.944 0A12 12 0 0 0 0 12a12 12 0 0 0 12 12 12 12 0 0 0 12-12A12 12 0 0 0 12 0a12 12 0 0 0-.056 0zm4.962 7.224c.1-.002.321.023.465.14a.506.506 0 0 1 .171.325c.016.093.036.306.02.472-.18 1.898-.962 6.502-1.36 8.627-.168.9-.499 1.201-.82 1.23-.696.065-1.225-.46-1.9-.902-1.056-.693-1.653-1.124-2.678-1.8-1.185-.78-.417-1.21.258-1.91.177-.184 3.247-2.977 3.307-3.23.007-.032.014-.15-.056-.212s-.174-.041-.249-.024c-.106.024-1.793 1.14-5.061 3.345-.48.33-.913.49-1.302.48-.428-.008-1.252-.241-1.865-.44-.752-.245-1.349-.374-1.297-.789.027-.216.325-.437.893-.663 3.498-1.524 5.83-2.529 6.998-3.014 3.332-1.386 4.025-1.627 4.476-1.635z"
+              />
+            </svg>
+            Telegram: 9110066743
+          </a>
+          <a href="tel:+919110066743" class="btn-call">
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.4 2 2 0 0 1 3.55 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z"
+              />
+            </svg>
+            Call: +91 9110066743
+          </a>
+        </div>
+      </div>
+
+      <section>
+        <div class="container">
+          <div class="text-center">
+            <h2 class="section-title">Booking Forms</h2>
+            <p style="color: var(--muted); margin-bottom: 12px">
+              Fill in the details below to secure your wedding date with S.R.K
+              Studio
+            </p>
+            <div class="divider"></div>
+          </div>
+          <div class="forms-grid">
+            <!-- Form 1 -->
+            <div class="form-wrapper">
+              <div class="form-header">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                  />
+                  <circle cx="12" cy="13" r="3" />
+                </svg>
+                <div>
+                  <span>Form 1 — Initial Inquiry</span>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: rgba(255, 255, 255, 0.5);
+                      margin-top: 2px;
+                    "
+                  >
+                    Tell us about yourself
+                  </div>
+                </div>
+              </div>
+              <div class="form-body">
+                <form onsubmit="handleForm1(event)">
+                  <div class="form-grid">
+                    <div class="form-group">
+                      <label>Name *</label>
+                      <input
+                        type="text"
+                        placeholder="Your full name"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label>Number *</label>
+                      <input type="tel" placeholder="Phone number" required />
+                    </div>
+                    <div class="form-group">
+                      <label>State *</label>
+                      <input type="text" placeholder="Your state" required />
+                    </div>
+                    <div class="form-group">
+                      <label>District *</label>
+                      <input type="text" placeholder="Your district" required />
+                    </div>
+                    <div class="form-group">
+                      <label>Pincode *</label>
+                      <input type="text" placeholder="Pincode" required />
+                    </div>
+                    <div class="form-group">
+                      <label>Email Address *</label>
+                      <input
+                        type="email"
+                        placeholder="your@email.com"
+                        required
+                      />
+                    </div>
+                    <div class="form-group full">
+                      <label>Location / Venue *</label>
+                      <input
+                        type="text"
+                        placeholder="Wedding venue or city"
+                        required
+                      />
+                    </div>
+                  </div>
+                  <button type="submit" class="form-submit">
+                    Submit Inquiry
+                  </button>
+                </form>
+              </div>
+            </div>
+
+            <!-- Form 2 -->
+            <div class="form-wrapper form-wrapper-2">
+              <div class="form-header">
+                <svg
+                  width="24"
+                  height="24"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                >
+                  <path
+                    d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+                  />
+                  <circle cx="12" cy="13" r="3" />
+                </svg>
+                <div>
+                  <span>Form 2 — Wedding Details</span>
+                  <div
+                    style="
+                      font-size: 11px;
+                      color: rgba(122, 0, 33, 0.55);
+                      margin-top: 2px;
+                    "
+                  >
+                    Your wedding information
+                  </div>
+                </div>
+              </div>
+              <div class="form-body">
+                <form onsubmit="handleForm2(event)">
+                  <div class="form-grid">
+                    <div class="form-group">
+                      <label>Groom / Bride Name *</label>
+                      <input
+                        type="text"
+                        placeholder="Groom or Bride name"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label>Number *</label>
+                      <input type="tel" placeholder="Contact number" required />
+                    </div>
+                    <div class="form-group">
+                      <label>For How Many Days *</label>
+                      <input
+                        type="number"
+                        min="1"
+                        placeholder="e.g. 3"
+                        required
+                      />
+                    </div>
+                    <div class="form-group">
+                      <label>From What Date Does It Start *</label>
+                      <input type="date" required />
+                    </div>
+                    <div class="form-group full">
+                      <label>When Will It Be Finished *</label>
+                      <input type="date" required />
+                    </div>
+                    <div class="form-group full">
+                      <label>Choose Camera Section *</label>
+                      <select required>
+                        <option value="">-- Select Camera Section --</option>
+                        <option>Section 1 — Canon EOS R5</option>
+                        <option>Section 2 — Sony Alpha A7 IV</option>
+                        <option>Section 3 — Nikon Z9</option>
+                        <option>Section 4 — Fujifilm GFX 100S</option>
+                        <option>Section 5 — DJI Ronin 4D</option>
+                      </select>
+                    </div>
+                  </div>
+                  <button type="submit" class="form-submit">
+                    Submit Wedding Details
+                  </button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="background: rgba(122, 0, 33, 0.03)">
+        <div class="container">
+          <div class="payment-box">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+            >
+              <rect x="1" y="4" width="22" height="16" rx="2" />
+              <line x1="1" y1="10" x2="23" y2="10" />
+            </svg>
+            <h2>Payment Information</h2>
+            <p
+              style="
+                font-size: 16px;
+                font-weight: 600;
+                color: var(--text);
+                margin: 0 0 8px;
+              "
+            >
+              Payment via UPI
+            </p>
+            <p>Advance booking charge applicable</p>
+            <div class="payment-highlight">
+              Payment details and UPI number will be shared on booking
+              confirmation.<br />
+              <strong style="color: var(--gold)"
+                >Advance payment secures your date.</strong
+              >
+            </div>
+            <div class="payment-footer">
+              For any payment queries, contact us directly on WhatsApp:
+              <strong>9110066743</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- ====== FOOTER (shown on all pages) ====== -->
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-brand">
+            <svg
+              width="22"
+              height="22"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="1.5"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            >
+              <path
+                d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"
+              />
+              <circle cx="12" cy="13" r="3" />
+            </svg>
+            <span class="footer-brand-name">S.R.K Studio</span>
+          </div>
+          <p class="footer-desc">
+            Premium wedding photography and videography studio capturing your
+            most precious moments with cinematic brilliance.
+          </p>
+          <p class="footer-ceo">CEO: Sharvan Yadav</p>
+        </div>
+        <div>
+          <div class="footer-title">Contact Us</div>
+          <div class="footer-contact-item">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+              <circle cx="12" cy="10" r="3" />
+            </svg>
+            <p>
+              State: Bihar<br />District: Saharsa<br />Street: Yadav Chowk,
+              Dumrail<br />Pincode: 852201
+            </p>
+          </div>
+          <div class="footer-contact-item">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <path
+                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.58 3.4 2 2 0 0 1 3.55 1.22h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.69a16 16 0 0 0 6 6l.9-.9a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7a2 2 0 0 1 1.72 2z"
+              />
+            </svg>
+            <p>+91 9110066743</p>
+          </div>
+        </div>
+        <div>
+          <div class="footer-title">Quick Links</div>
+          <div class="footer-links">
+            <a href="#" onclick="showPage('home')">Home</a>
+            <a href="#" onclick="showPage('vendor')">Wedding Vendors</a>
+            <a href="#" onclick="showPage('real')">Real Weddings</a>
+            <a href="#" onclick="showPage('book')">Book Now</a>
+          </div>
+          <div class="footer-socials">
+            <a href="#" title="Instagram"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <rect x="2" y="2" width="20" height="20" rx="5" />
+                <circle cx="12" cy="12" r="4" />
+                <circle cx="17.5" cy="6.5" r="1" fill="currentColor" /></svg
+            ></a>
+            <a href="#" title="Facebook"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                /></svg
+            ></a>
+            <a href="#" title="X"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path d="M4 4l16 16M4 20L20 4" /></svg
+            ></a>
+            <a href="#" title="YouTube"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                />
+                <polygon
+                  fill="white"
+                  points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+                /></svg
+            ></a>
+            <a href="#" title="LinkedIn"
+              ><svg
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                stroke-width="2"
+              >
+                <path
+                  d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"
+                />
+                <rect x="2" y="9" width="4" height="12" />
+                <circle cx="4" cy="4" r="2" /></svg
+            ></a>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>Thank you for visiting our site.</p>
+        <p>&copy; 2025 S.R.K Studio. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- Toast -->
+    <div id="toast">
+      <strong id="toastTitle"></strong><span id="toastMsg"></span>
+    </div>
+
+    <script>
+      // Splash
+      window.addEventListener("load", function () {
+        setTimeout(function () {
+          document.getElementById("splash").classList.add("hide");
+        }, 2500);
+      });
+
+      // Page navigation
+      function showPage(page) {
+        document
+          .querySelectorAll(".page")
+          .forEach((p) => p.classList.remove("active"));
+        document.getElementById("page-" + page).classList.add("active");
+        document
+          .querySelectorAll(".nav-link")
+          .forEach((l) => l.classList.remove("active"));
+        var nl = document.getElementById("nl-" + page);
+        if (nl) nl.classList.add("active");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+        document.getElementById("mobileMenu").classList.remove("open");
+        return false;
+      }
+
+      function toggleMobile() {
+        document.getElementById("mobileMenu").classList.toggle("open");
+      }
+
+      // Toast
+      var toastTimer;
+      function showToast(title, msg) {
+        document.getElementById("toastTitle").textContent = title;
+        document.getElementById("toastMsg").textContent = msg;
+        var t = document.getElementById("toast");
+        t.classList.add("show");
+        clearTimeout(toastTimer);
+        toastTimer = setTimeout(function () {
+          t.classList.remove("show");
+        }, 3500);
+      }
+
+      // Form handlers
+      function handleEmail(e) {
+        e.preventDefault();
+        showToast("Subscribed!", "Thank you for joining our email list.");
+        e.target.reset();
+      }
+      function handleBooking(e) {
+        e.preventDefault();
+        showToast(
+          "Booking Request Sent!",
+          "We will contact you on WhatsApp shortly.",
+        );
+        e.target.reset();
+      }
+      function handleForm1(e) {
+        e.preventDefault();
+        showToast("Inquiry Submitted!", "We will contact you within 24 hours.");
+        e.target.reset();
+      }
+      function handleForm2(e) {
+        e.preventDefault();
+        showToast(
+          "Wedding Details Submitted!",
+          "Our team will confirm your booking shortly.",
+        );
+        e.target.reset();
+      }
+    </script>
+  </body>
+</html>
