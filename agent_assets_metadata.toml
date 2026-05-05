@@ -1,0 +1,73 @@
+uploads = []
+
+[[generated]]
+id = "G3VLSowH7nwNBRfaneIlk"
+uri = "file://artifacts/srk-studio/public/images/hero.png"
+type = "image"
+title = "DSLR camera dark gold"
+
+[[generated]]
+id = "YgcUAw1dPcSdj7nCq4fSj"
+uri = "file://artifacts/srk-studio/public/images/aplus-1.png"
+type = "image"
+title = "Cinematic wedding A+"
+
+[[generated]]
+id = "bbGdmUSRdnLU2zLbJ0B9Q"
+uri = "file://artifacts/srk-studio/public/images/a-1.png"
+type = "image"
+title = "Bollywood style wedding A"
+
+[[generated]]
+id = "Km7jYufp7JXqZifxbpYBe"
+uri = "file://artifacts/srk-studio/public/images/b-1.png"
+type = "image"
+title = "High quality wedding B"
+
+[[generated]]
+id = "8WC1wAJC4zAPoIusRsPo7"
+uri = "file://artifacts/srk-studio/public/images/c-1.png"
+type = "image"
+title = "4K crisp wedding C"
+
+[[generated]]
+id = "xeqeHMRzNz4kXz89ZofIT"
+uri = "file://artifacts/srk-studio/public/images/d-1.png"
+type = "image"
+title = "Professional wedding D"
+
+[[generated]]
+id = "y6g43dlagSe3NANSCpQNz"
+uri = "file://artifacts/srk-studio/public/images/e-1.png"
+type = "image"
+title = "Essential wedding E"
+
+[[generated]]
+id = "4ul2O_1JL285FIRRrRI2t"
+uri = "file://artifacts/srk-studio/public/images/vendor-hero.png"
+type = "image"
+title = "Luxury venue decoration"
+
+[[generated]]
+id = "Jcj_5PikW6rpzAgWQh3i2"
+uri = "file://artifacts/srk-studio/public/images/gallery-1.png"
+type = "image"
+title = "Real wedding gallery 1"
+
+[[generated]]
+id = "92AfnpRV-NC0zOiVwKIhP"
+uri = "file://artifacts/srk-studio/public/images/gallery-2.png"
+type = "image"
+title = "Real wedding gallery 2"
+
+[[outputs]]
+id = "j7SGNAyvly6ddn4_9Cx3i"
+uri = "file://srk-studio-source.tar.gz"
+type = "unspecified"
+title = "S.R.K Studio — Complete Pro Source Code"
+
+[[outputs]]
+id = "D0_DInQW44RsAJ6mL-vSz"
+uri = "file://srk-studio-website.zip"
+type = "unspecified"
+title = "S.R.K Studio — Complete Website (ZIP Download)"
