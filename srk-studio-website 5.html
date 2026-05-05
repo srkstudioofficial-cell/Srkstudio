@@ -1574,7 +1574,21 @@ function toggleChat(){
     win.classList.remove('open');
     document.getElementById('chat-btn-icon').textContent='🤖';
   }
-}
+}video splash <style>
+  #welcomeVideo {
+    transition: opacity 0.5s ease;
+  }
+</style>
+
+<script>
+  setTimeout(function () {
+    var video = document.getElementById("welcomeVideo");
+    video.style.opacity = "0";
+    setTimeout(() => {
+      video.style.display = "none";
+    }, 500);
+  }, 2000);
+</script>
 </script>
 </body>
 </html>
